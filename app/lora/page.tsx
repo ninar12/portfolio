@@ -9,7 +9,7 @@ export default function Stable() {
       year="2024"
       techStack={["Replicate", "CC Photos of black men hairstyles"]}
       link="https://replicate.com/ninar12/sdxlblackmalehairstyles"
-      image=""
+      image="lora.png"
       githubLink={""}
     />
   )

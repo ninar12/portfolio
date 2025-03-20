@@ -9,7 +9,7 @@ export default function Dbt() {
       description="I created a chatbot to help users brainstorm and apply Dialectical Behavior Therapy (DBT) skills, focusing on mindfulness, emotional regulation, and interpersonal effectiveness. While not a substitute for professional care, it’s designed to make DBT strategies more accessible for everyday challenges."
       techStack={["Cozebot.com", "DBT Skills", "Chatbot"]}
       year="2024"
-      image=""
+      image="cozebot.png"
       githubLink={""}
     />
   )

@@ -9,7 +9,7 @@ export default function Stable() {
       year="2024"
       techStack={["React", "Next.js", "Vercel", "Material UI", "TailwindCSS"]}
       link="https://www.patternbreak.ai/"
-      image=""
+      image="stablediffusion.png"
       githubLink={"https://github.com/patternbreak/patternbreak-ai"}
     />
   )

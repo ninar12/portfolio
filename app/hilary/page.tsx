@@ -9,7 +9,7 @@ export default function Stable() {
       description="Built and designed a personal website and personal website for Hilary MacGregor, AMFT."
       techStack={["Webflow", "Customized CSS", "Figma"]}
       year="2024"
-      image=""
+      image="hilary.png"
       githubLink={""}
     />
   )

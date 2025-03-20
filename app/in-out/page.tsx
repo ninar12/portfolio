@@ -9,7 +9,7 @@ export default function Stable() {
       description="Built a generator for making lists for the new year!"
       techStack={["React", "Netlify", "React-95 UI Components"]}
       year="2024"
-      image=""
+      image="inout.png"
       githubLink={"https://github.com/ninar12/in-and-out"}
     />
   )

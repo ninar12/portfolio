@@ -70,13 +70,9 @@ export default function ProjectCard({
           {/* <hr className="text-gray-300"></hr> */}
 
           {image && (
-            <div className="mr-16 mb-4 ml-16">
-              <video
+            <div className="mr-10 mb-4 ml-10">
+              <img
                 src={image}
-                loop={true}
-                muted={true}
-                autoPlay={true}
-                controls={true}
                 className="w-full shadow-md mt-4 border border-neutral-200 rounded-xl rounded-b-xl object-fill"
               />
             </div>

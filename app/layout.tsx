@@ -65,8 +65,11 @@ export default function RootLayout({
               <section className="p-4">
                 <div className="mb-8">
                   <h1 className="font-semibold mt-8 text-2xl">NINA RHONE</h1>
-                  <p className="text-sm">
-                    CURRENTLY: DATA ANALYST @ GUESS INC. 2023 MIT GRAD.
+                  <p className="text-sm ">
+                    CREATIVE TECHNOLOGIST. MIT 2023 GRAD.
+                  </p>
+                  <p className="text-xs mt-2 text-neutral-300">
+                    CURRENTLY: DATA ANALYST @ GUESS INC.
                   </p>
                   <a
                     href="mailto:ninajr11@icloud.com"
@@ -85,7 +88,7 @@ export default function RootLayout({
                       <li key={index} className="mb-1">
                         <Link
                           href={item.link}
-                          className="text-sm hover:text-pink-400">
+                          className="text-sm hover:text-pink-50 hover:bg-pink-700">
                           {" "}
                           _{item.name}
                         </Link>
@@ -104,7 +107,7 @@ export default function RootLayout({
                       <li key={index} className="mb-1">
                         <Link
                           href={item.link}
-                          className="text-sm active:text-pink-50 hover:text-pink-400">
+                          className="text-sm hover:text-pink-50 hover:bg-pink-700">
                           _{item.name}
                         </Link>
                       </li>

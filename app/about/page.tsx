@@ -1,8 +1,8 @@
 export default function About() {
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
-      <div className="max-w-2xl bg-white rounded-2xl shadow-lg p-8">
-        <h1 className="text-4xl text-gray-900 mb-4">About Me</h1>
+      <div className="max-w-2xl bg-white rounded-xl shadow-lg p-8">
+        <h1 className="text-4xl text-gray-900 text-center mb-4">ABOUT NINA</h1>
         <p className="text-lg text-gray-700 mb-6">
           I'm Nina Rhone, a full-stack engineer and creative technologist. I
           specialize in building sleek, user-friendly web applications and

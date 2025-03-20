@@ -9,7 +9,7 @@ export default function Jonathan() {
       description="Built and designed a personal website and personal website for Jonathan Fernandez, a writer, producer, and director."
       techStack={["Squarespace", "Customized CSS"]}
       year="2024"
-      image=""
+      image="jonathan.png"
       githubLink={""}
     />
   )
