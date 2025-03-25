@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react"
 
 const placeholders = [
-  "I have an idea for... a cool website",
-  "I want to fix... my business's website",
-  "I need help with... a creative project",
-  "I need help with... a personal ai bot",
+  "I have an idea for a cool website",
+  "I want to fix my business's website",
+  "I need help with a creative project",
+  "I need help with a personal ai bot",
+  "I need help making a recommmendation system",
 ]
 
 export default function ContactPage() {
@@ -71,6 +72,7 @@ export default function ContactPage() {
             <input
               type="text"
               name="name"
+              placeholder="Jane D."
               value={formData.name}
               onChange={handleChange}
               required
@@ -83,6 +85,7 @@ export default function ContactPage() {
             <input
               type="email"
               name="email"
+              placeholder="you@gmail.com"
               value={formData.email}
               onChange={handleChange}
               required
@@ -99,7 +102,7 @@ export default function ContactPage() {
               required
               rows={4}
               placeholder={currentPlaceholder}
-              className="w-full border rounded-lg px-3 py-2"
+              className="w-full border  placeholder:text-pink-600 rounded-lg px-3 py-2"
             />
           </div>
 

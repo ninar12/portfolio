@@ -37,15 +37,6 @@ export default function RootLayout({
   const [isResumeVisible, setIsResumeVisible] = useState(true)
   const [isToolVisible, setIsToolVisible] = useState(false)
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSidebarVisible(window.innerWidth >= 768)
-    }
-    window.addEventListener("resize", handleResize)
-    handleResize()
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-
   return (
     <html
       lang="en"
@@ -57,10 +48,10 @@ export default function RootLayout({
       <body className="antialiased h-full">
         <main
           className={`flex min-h-screen ${
-            isSidebarVisible ? "grid-cols-4" : "grid-cols-1"
+            isSidebarVisible ? "grid-cols-5" : "grid-cols-1"
           } grid`}>
           {isSidebarVisible && (
-            <section className="col-span-1 bg-neutral-900 text-white h-full">
+            <section className="col-span-2 md:col-span-1 lg:col-span-1 bg-neutral-900 sm:w-full text-white h-full">
               <Navbar />
               <section className="p-4">
                 <div className="mb-8">
@@ -140,13 +131,17 @@ export default function RootLayout({
 
           {/* Main Content */}
           <section
-            className={isSidebarVisible ? `col-span-3 p-4` : `p-8 pl-16 pr-16`}>
+            className={
+              isSidebarVisible
+                ? `col-span-3 md:col-span-4 p-4 pt-8 flex justify-center min-h-screen`
+                : `flex justify-center p-4 pt-8 min-h-screen`
+            }>
             <button
               onClick={() => setIsSidebarVisible(!isSidebarVisible)}
               className="absolute right-4 top-4 text-sm text-gray-400">
               {isSidebarVisible ? "←" : "→"}
             </button>
-            {children}
+            <div className="w-full max-w-3xl">{children}</div>
           </section>
         </main>
 

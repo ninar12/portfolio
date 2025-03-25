@@ -51,7 +51,7 @@ const experiences = {
     location: "SF, CA",
     date: "2022",
     description: "",
-    link: "https://www.akellohealth.com",
+    link: "",
   },
   Conservation: {
     company: "CONSERVATION X LABS",
@@ -66,7 +66,7 @@ const experiences = {
     role: "DATA VIS",
     location: "REMOTE",
     date: "2021",
-    description: "",
+    description: "https://www.helpguide.org/",
   },
   rivet: {
     company: "RIVET",
@@ -100,7 +100,7 @@ const Resume = () => {
             key={index}
             className="mb-1 experience-item border rounded text-sm text-neutral-500 border-pink-200">
             <div className="grid grid-cols-4 text-white p-2">
-              <span className="border-r-green-100 col-span-3 border-r">
+              <span className="border-r-pink-100 mr-1 col-span-3 border-r">
                 {"link" in experience ? (
                   <a
                     href={experience.link}
@@ -117,7 +117,9 @@ const Resume = () => {
                 <p className="text-neutral-200 small-p">
                   📍 {experience.location}
                 </p>
-                <p className="text-neutral-300 small-p">{experience.date}</p>
+                <p className="text-neutral-300 hidden md:block small-p">
+                  {experience.date}
+                </p>
               </span>
             </div>
             <p>{experience.description}</p>

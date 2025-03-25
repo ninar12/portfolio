@@ -1,4 +1,5 @@
 import React from "react"
+import PixelatedImage from "./PixelatedImage"
 
 interface GalleryItemProps {
   image?: string
@@ -9,7 +10,11 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image, video }) => {
   return (
     <div className="gallery-item">
       {image && (
-        <img src={image} alt="Gallery Item" className="gallery-image" />
+        <PixelatedImage
+          src={image}
+          alt="Gallery Item"
+          className="gallery-image"
+        />
       )}
       {video && (
         <video src={video} className="gallery-video" controls>
