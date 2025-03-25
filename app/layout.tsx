@@ -46,104 +46,112 @@ export default function RootLayout({
         GeistMono.variable
       )}>
       <body className="antialiased h-full">
-        <main
-          className={`flex min-h-screen ${
-            isSidebarVisible ? "grid-cols-5" : "grid-cols-1"
-          } grid`}>
-          {isSidebarVisible && (
-            <section className="col-span-2 md:col-span-1 lg:col-span-1 bg-neutral-900 sm:w-full text-white h-full">
-              <Navbar />
-              <section className="p-4">
-                <div className="mb-8">
-                  <h1 className="font-semibold mt-8 text-2xl">NINA RHONE</h1>
-                  <p className="text-sm ">
-                    CREATIVE TECHNOLOGIST. MIT 2023 GRAD.
-                  </p>
-                  <p className="text-xs mt-2 text-neutral-300">
-                    CURRENTLY: DATA ANALYST @ GUESS INC.
-                  </p>
-                  <a
-                    href="mailto:ninajr11@icloud.com"
-                    className="text-neutral-300 text-xs hover:text-neutral-400">
-                    💌 ninajr11@icloud.com
-                  </a>
-                </div>
+        <div className="flex flex-col min-h-screen">
+          <main className="flex-grow">
+            <main
+              className={`flex min-h-screen ${
+                isSidebarVisible ? "grid-cols-5" : "grid-cols-1"
+              } grid`}>
+              {isSidebarVisible && (
+                <section className="col-span-2 md:col-span-1 lg:col-span-1 bg-neutral-900 sm:w-full text-white h-full">
+                  <Navbar />
 
-                {/* Commission Projects */}
-                <div className="mb-4 mt-16">
-                  <h2 className="font-semibold text-sm mb-2">
-                    COMMISSION PROJECTS
-                  </h2>
-                  <ul>
-                    {work.map((item, index) => (
-                      <li key={index} className="mb-1">
-                        <Link
-                          href={item.link}
-                          className="text-sm hover:text-pink-50 hover:bg-pink-700">
-                          {" "}
-                          _{item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  <section className="p-4">
+                    <div className="mb-8">
+                      <h1 className="font-semibold mt-8 text-2xl">
+                        NINA RHONE
+                      </h1>
+                      <p className="text-sm ">
+                        CREATIVE TECHNOLOGIST. MIT 2023 GRAD.
+                      </p>
+                      <p className="text-xs mt-2 text-neutral-300">
+                        CURRENTLY: DATA ANALYST @ GUESS INC.
+                      </p>
+                      <a
+                        href="mailto:ninajr11@icloud.com"
+                        className="text-neutral-300 text-xs hover:text-neutral-400">
+                        💌 ninajr11@icloud.com
+                      </a>
+                    </div>
 
-                {/* Personal Projects */}
-                <div className="mb-4 mt-8">
-                  <h2 className="font-semibold text-sm mb-2">
-                    PERSONAL PROJECTS
-                  </h2>
-                  <ul>
-                    {personal.map((item, index) => (
-                      <li key={index} className="mb-1">
-                        <Link
-                          href={item.link}
-                          className="text-sm hover:text-pink-50 hover:bg-pink-700">
-                          _{item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                    {/* Commission Projects */}
+                    <div className="mb-4 mt-16">
+                      <h2 className="font-semibold text-sm mb-2">
+                        COMMISSION PROJECTS
+                      </h2>
+                      <ul>
+                        {work.map((item, index) => (
+                          <li key={index} className="mb-1">
+                            <Link
+                              href={item.link}
+                              className="text-sm hover:text-pink-50 hover:bg-pink-700">
+                              {" "}
+                              _{item.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                {/* Resume */}
-                <div className="mb-4 mt-12">
-                  <h2
-                    className="font-semibold mb-2 text-sm cursor-pointer"
-                    onClick={() => setIsResumeVisible(!isResumeVisible)}>
-                    RESUME {isResumeVisible ? "-" : "+"}
-                  </h2>
-                  {isResumeVisible && <Resume />}
-                </div>
+                    {/* Personal Projects */}
+                    <div className="mb-4 mt-8">
+                      <h2 className="font-semibold text-sm mb-2">
+                        PERSONAL PROJECTS
+                      </h2>
+                      <ul>
+                        {personal.map((item, index) => (
+                          <li key={index} className="mb-1">
+                            <Link
+                              href={item.link}
+                              className="text-sm hover:text-pink-50 hover:bg-pink-700">
+                              _{item.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                {/* Tools + Skills */}
-                <div>
-                  <h2
-                    className="font-semibold mb-2 text-sm cursor-pointer"
-                    onClick={() => setIsToolVisible(!isToolVisible)}>
-                    TOOLS + SKILLS {isToolVisible ? "-" : "+"}
-                  </h2>
-                  {isToolVisible && <StyleConveyorBelt />}
-                </div>
+                    {/* Resume */}
+                    <div className="mb-4 mt-12">
+                      <h2
+                        className="font-semibold mb-2 text-sm cursor-pointer"
+                        onClick={() => setIsResumeVisible(!isResumeVisible)}>
+                        RESUME {isResumeVisible ? "-" : "+"}
+                      </h2>
+                      {isResumeVisible && <Resume />}
+                    </div>
+
+                    {/* Tools + Skills */}
+                    <div>
+                      <h2
+                        className="font-semibold mb-2 text-sm cursor-pointer"
+                        onClick={() => setIsToolVisible(!isToolVisible)}>
+                        TOOLS + SKILLS {isToolVisible ? "-" : "+"}
+                      </h2>
+                      {isToolVisible && <StyleConveyorBelt />}
+                    </div>
+                  </section>
+                </section>
+              )}
+
+              {/* Main Content */}
+              <section
+                className={
+                  isSidebarVisible
+                    ? `col-span-3 md:col-span-4 p-4 pt-8 flex justify-center min-h-screen`
+                    : `flex justify-center p-4 pt-8 min-h-screen`
+                }>
+                <button
+                  onClick={() => setIsSidebarVisible(!isSidebarVisible)}
+                  className="absolute right-4 top-6 text-sm text-gray-400">
+                  {isSidebarVisible ? "←" : "→"}
+                </button>
+                <div className="w-full max-w-3xl">{children}</div>
               </section>
-            </section>
-          )}
-
-          {/* Main Content */}
-          <section
-            className={
-              isSidebarVisible
-                ? `col-span-3 md:col-span-4 p-4 pt-8 flex justify-center min-h-screen`
-                : `flex justify-center p-4 pt-8 min-h-screen`
-            }>
-            <button
-              onClick={() => setIsSidebarVisible(!isSidebarVisible)}
-              className="absolute right-4 top-4 text-sm text-gray-400">
-              {isSidebarVisible ? "←" : "→"}
-            </button>
-            <div className="w-full max-w-3xl">{children}</div>
-          </section>
-        </main>
+            </main>
+          </main>
+          <Footer />
+        </div>
 
         <Analytics />
         <SpeedInsights />
