@@ -6,7 +6,7 @@ export default function Jonathan() {
       title="PERSONAL WEBSITE FOR JONATHAN"
       subtitle=""
       link="https://www.jonathan-fernandez.com/"
-      description="Built and designed a personal website and personal website for Jonathan Fernandez, a writer, producer, and director."
+      description="I worked with Jonathan Fernandez, a writer, producer, and director, to create his website and personal brand. In an age where personal branding and a personal website is getting more and more important, I collaborated with him to design and display his work, teaching experience, and ways to contact him."
       techStack={[
         { type: "hosting", name: "Squarespace" },
         { type: "skill", name: "Customized CSS" },

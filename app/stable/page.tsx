@@ -5,7 +5,7 @@ export default function Stable() {
     <ProjectCard
       title="Stable Diffusion Generator"
       subtitle="The Image Prompt Recipe"
-      description="Teamed up with Patternbreak to build a powerful tool that helps users create stunning art with Stable Diffusion."
+      description="When working with the creative agency, Patternbreak, we wanted to figure out a way to formulate prompts for image generation in the best way. Since AI generated art and design is the future, I did some research on the best way to generate prompts. I realized there was a theme in the technique in trying to generate what you are envisioning. I also included a feature that generates prompts automatically with a Huggingface model finetuned on stable diffusion prompts scraped from Midjourney."
       year="2024"
       techStack={[
         { type: "library", name: "React" },
@@ -13,12 +13,14 @@ export default function Stable() {
         { type: "hosting", name: "Vercel" },
         { type: "library", name: "Material UI" },
         { type: "API", name: "fal.ai" },
+        { type: "tool", name: "Huggingface" },
+        { type: "skill", name: "design & building" },
         { type: "skill", name: "fullstack" },
       ]}
       link="https://www.patternbreak.ai/"
       image="stablediffusion.png"
       skills="development, collaboration, R&D, idea generation, design, and deployment"
-      githubLink={"https://github.com/patternbreak/patternbreak-ai"}
+      githubLink={""}
     />
   )
 }

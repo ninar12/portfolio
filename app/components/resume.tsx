@@ -66,7 +66,7 @@ const experiences = {
     role: "DATA VIS",
     location: "REMOTE",
     date: "2021",
-    description: "https://www.helpguide.org/",
+    link: "https://www.helpguide.org/",
   },
   rivet: {
     company: "RIVET",
@@ -122,7 +122,6 @@ const Resume = () => {
                 </p>
               </span>
             </div>
-            <p>{experience.description}</p>
           </li>
         ))}
       </ul>

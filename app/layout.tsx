@@ -8,9 +8,9 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Footer from "./components/footer"
 import Link from "next/link"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Resume from "./components/resume"
-import StyleConveyorBelt from "./components/styleconveyorbelt"
+import { StyleConveyorBelt } from "./components/StyleConveyerBelt"
 
 const cx = (...classes: any) => classes.filter(Boolean).join(" ")
 
@@ -33,7 +33,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [isSidebarVisible, setIsSidebarVisible] = useState(true)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [isResumeVisible, setIsResumeVisible] = useState(true)
   const [isToolVisible, setIsToolVisible] = useState(false)
 
@@ -47,109 +47,115 @@ export default function RootLayout({
       )}>
       <body className="antialiased h-full">
         <div className="flex flex-col min-h-screen">
-          <main className="flex-grow">
-            <main
-              className={`flex min-h-screen ${
-                isSidebarVisible ? "grid-cols-5" : "grid-cols-1"
-              } grid`}>
-              {isSidebarVisible && (
-                <section className="col-span-2 md:col-span-1 lg:col-span-1 bg-neutral-900 sm:w-full text-white h-full">
-                  <Navbar />
+          <Navbar />
 
-                  <section className="p-4">
-                    <div className="mb-8">
-                      <h1 className="font-semibold mt-8 text-2xl">
-                        NINA RHONE
-                      </h1>
-                      <p className="text-sm ">
-                        CREATIVE TECHNOLOGIST. MIT 2023 GRAD.
-                      </p>
-                      <p className="text-xs mt-2 text-neutral-300">
-                        CURRENTLY: DATA ANALYST @ GUESS INC.
-                      </p>
-                      <a
-                        href="mailto:ninajr11@icloud.com"
-                        className="text-neutral-300 text-xs hover:text-neutral-400">
-                        💌 ninajr11@icloud.com
-                      </a>
-                    </div>
+          <div className="flex-1 flex">
+            {/* Sidebar Toggle Button - Mobile */}
+            <button
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+              className="fixed bottom-4 right-4 z-50 md:hidden bg-pink-500 text-white p-3 rounded-full shadow-lg hover:bg-pink-600 transition-colors">
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                {isSidebarOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
 
-                    {/* Commission Projects */}
-                    <div className="mb-4 mt-16">
-                      <h2 className="font-semibold text-sm mb-2">
-                        COMMISSION PROJECTS
-                      </h2>
-                      <ul>
-                        {work.map((item, index) => (
-                          <li key={index} className="mb-1">
-                            <Link
-                              href={item.link}
-                              className="text-sm hover:text-pink-50 hover:bg-pink-700">
-                              {" "}
-                              _{item.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+            {/* Sidebar */}
+            <aside
+              className={`${
+                isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+              } fixed inset-y-0 left-0 z-1 w-64 bg-neutral-900 transform md:relative md:translate-x-0 transition-transform duration-300 ease-in-out overflow-y-auto`}>
+              <div className="p-4 pt-12">
+                <div className="mb-8">
+                  <h1 className="font-semibold text-2xl text-pink-400">
+                    NINA RHONE
+                  </h1>
+                  <p className="text-sm text-neutral-300 mt-1">
+                    CREATIVE TECHNOLOGIST
+                  </p>
+                  <p className="text-xs mt-2 text-neutral-400">MIT 2023 GRAD</p>
+                  <p className="text-xs text-neutral-400">
+                    DATA ANALYST @ GUESS INC.
+                  </p>
+                </div>
 
-                    {/* Personal Projects */}
-                    <div className="mb-4 mt-8">
-                      <h2 className="font-semibold text-sm mb-2">
-                        PERSONAL PROJECTS
-                      </h2>
-                      <ul>
-                        {personal.map((item, index) => (
-                          <li key={index} className="mb-1">
-                            <Link
-                              href={item.link}
-                              className="text-sm hover:text-pink-50 hover:bg-pink-700">
-                              _{item.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                {/* Commission Projects */}
+                <div className="mb-8">
+                  <h2 className="text-sm font-semibold text-pink-300 mb-2">
+                    COMMISSION PROJECTS
+                  </h2>
+                  <div className="space-y-2">
+                    {work.map((item, index) => (
+                      <Link
+                        key={index}
+                        href={item.link}
+                        className="block text-sm text-neutral-400 hover:text-pink-400 transition-colors">
+                        _{item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
 
-                    {/* Resume */}
-                    <div className="mb-4 mt-12">
-                      <h2
-                        className="font-semibold mb-2 text-sm cursor-pointer"
-                        onClick={() => setIsResumeVisible(!isResumeVisible)}>
-                        RESUME {isResumeVisible ? "-" : "+"}
-                      </h2>
-                      {isResumeVisible && <Resume />}
-                    </div>
+                {/* Personal Projects */}
+                <div className="mb-8">
+                  <h2 className="text-sm font-semibold text-pink-300 mb-2">
+                    PERSONAL PROJECTS
+                  </h2>
+                  <div className="space-y-2">
+                    {personal.map((item, index) => (
+                      <Link
+                        key={index}
+                        href={item.link}
+                        className="block text-sm text-neutral-400 hover:text-pink-400 transition-colors">
+                        _{item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
 
-                    {/* Tools + Skills */}
-                    <div>
-                      <h2
-                        className="font-semibold mb-2 text-sm cursor-pointer"
-                        onClick={() => setIsToolVisible(!isToolVisible)}>
-                        TOOLS + SKILLS {isToolVisible ? "-" : "+"}
-                      </h2>
-                      {isToolVisible && <StyleConveyorBelt />}
-                    </div>
-                  </section>
-                </section>
-              )}
+                {/* Resume */}
+                <div className="mb-4 mt-12">
+                  <h2
+                    className="font-semibold mb-2 text-sm text-pink-300 cursor-pointer"
+                    onClick={() => setIsResumeVisible(!isResumeVisible)}>
+                    RESUME {isResumeVisible ? "-" : "+"}
+                  </h2>
+                  {isResumeVisible && <Resume />}
+                </div>
 
-              {/* Main Content */}
-              <section
-                className={
-                  isSidebarVisible
-                    ? `col-span-3 md:col-span-4 p-4 pt-8 flex justify-center min-h-screen`
-                    : `flex justify-center p-4 pt-8 min-h-screen`
-                }>
-                <button
-                  onClick={() => setIsSidebarVisible(!isSidebarVisible)}
-                  className="absolute right-4 top-6 text-sm text-gray-400">
-                  {isSidebarVisible ? "←" : "→"}
-                </button>
-                <div className="w-full max-w-3xl">{children}</div>
-              </section>
-            </main>
-          </main>
+                {/* Tools + Skills */}
+                <div>
+                  <h2
+                    className="font-semibold mb-2 text-sm text-pink-300 cursor-pointer"
+                    onClick={() => setIsToolVisible(!isToolVisible)}>
+                    TOOLS + SKILLS {isToolVisible ? "-" : "+"}
+                  </h2>
+                  {isToolVisible && <StyleConveyorBelt />}
+                </div>
+              </div>
+            </aside>
+
+            {/* Main Content */}
+            <main className="flex-1 p-4">{children}</main>
+          </div>
+
           <Footer />
         </div>
 

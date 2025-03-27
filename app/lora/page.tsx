@@ -5,7 +5,7 @@ export default function Lora() {
     <ProjectCard
       title="BLACK HAIRSTYLE LORA"
       subtitle="Stable Diffusion Finetuned"
-      description="Teamed up with Patternbreak to train SD-XL with replicate to produce more realistic black hairstyles"
+      description="I used an open source trainer in replicate to train a SDXL Lora (Stable Diffusion is an image generation model), trained on black male hairstyles. As the images that Stable Diffusion was trained are racially skewed, there are not enough data sources about the names and cultural significance of all black male hairstyles. The biggest challenge was collecting the training data, because I wanted to follow the Creative Commons rules about using images on the internet for people’s privacy. I collected quite a few male black hairstyles, and labeled them with their names."
       year="2024"
       techStack={[
         { type: "tool", name: "Replicate" },

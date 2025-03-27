@@ -34,7 +34,7 @@ export default function ProjectCard({
     hosting: "bg-pink-500 border border-pink-600",
   }
   return (
-    <div className="lg:max-w-6xl">
+    <div className="max-w-4xl mx-auto">
       <p className="text-xs p-2 text-left"></p>
       <Card>
         <CardContent>
