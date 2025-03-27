@@ -16,7 +16,7 @@ export default function About() {
         {/* Introduction */}
         <div className="bg-neutral-900/50 backdrop-blur-sm p-8 rounded-2xl border border-pink-500/20 shadow-lg">
           <div className="prose prose-invert max-w-none">
-            <p className="text-lg leading-relaxed text-neutral-200">
+            <p className="text-lg leading-relaxed text-neutral-50">
               Hi, I'm{" "}
               <span className="text-pink-400 font-semibold">Nina Rhone</span>—an
               MIT graduate in{" "}
