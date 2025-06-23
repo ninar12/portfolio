@@ -7,14 +7,14 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center text-sm justify-center space-x-6">
           <a
-            href="https://linkedin.com/in/ninarhone"
+            href="https://www.linkedin.com/in/nina-rhone/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-400 transition-colors">
             LinkedIn
           </a>
           <a
-            href="https://twitter.com/ninarhone"
+            href="https://x.com/ninar2424"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-400 transition-colors">
