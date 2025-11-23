@@ -21,10 +21,6 @@ const work = [
     name: "ARC CAPITAL PARTNERS WEBSITE REFRESH",
     link: "/arc-capital-partners",
   },
-  {
-    name: "THE PEOPLE'S PRINCESS",
-    link: "/the-peoples-princess",
-  },
   { name: "WELCOME SITE FOR BC GROUP", link: "/bc" },
   { name: "PERSONAL WEBSITE FOR HILARY", link: "/hilary" },
   { name: "PERSONAL WEBSITE FOR JONATHAN", link: "/jonathan" },
@@ -34,6 +30,10 @@ const personal = [
   { name: "DBT CHATBOT", link: "/dbt-chatbot" },
   { name: "IN & OUT GENERATOR", link: "/in-out" },
   { name: "POMODORO TIMER", link: "/pomodoro" },
+  {
+    name: "THE PEOPLE'S PRINCESS",
+    link: "/the-peoples-princess",
+  },
 ]
 
 export default function RootLayout({
