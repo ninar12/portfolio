@@ -32,6 +32,11 @@ const Footer = () => {
             className="hover:text-blue-400 transition-colors">
             Email
           </a>
+          <a
+            href="https://huggingface.co/ninar12"
+            className="hover:text-blue-400 transition-colors">
+            Huggingface
+          </a>
         </div>
         <p className="text-center text-neutral-400 text-sm">
           © 2025 NJR Solutions

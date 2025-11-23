@@ -61,6 +61,21 @@ export default function HomePage() {
             </div>
           </Link>
 
+          <Link href="/arc-capital-partners" className="group">
+            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
+              <div className="overflow-hidden rounded-lg">
+                <PixelatedImage
+                  src="/arccapitalpartners.png"
+                  alt="Arc Capital Partners"
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
+                Arc Capital Partners
+              </p>
+            </div>
+          </Link>
+
           <Link href="/hilary" className="group">
             <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
               <div className="overflow-hidden rounded-lg">
@@ -106,6 +121,20 @@ export default function HomePage() {
             </div>
           </Link>
 
+          <Link href="/the-peoples-princess" className="group">
+            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
+              <div className="overflow-hidden rounded-lg">
+                <PixelatedImage
+                  src="/princess-diana.jpeg"
+                  alt="The People's Princess"
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
+                The People's Princess
+              </p>
+            </div>
+          </Link>
           <Link href="/jonathan" className="group">
             <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
               <div className="overflow-hidden rounded-lg">

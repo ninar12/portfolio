@@ -17,6 +17,14 @@ const cx = (...classes: any) => classes.filter(Boolean).join(" ")
 const work = [
   { name: "STABLE DIFFUSION GENERATOR", link: "/stable" },
   { name: "BLACK HAIRSTYLE LORA", link: "/lora" },
+  {
+    name: "ARC CAPITAL PARTNERS WEBSITE REFRESH",
+    link: "/arc-capital-partners",
+  },
+  {
+    name: "THE PEOPLE'S PRINCESS",
+    link: "/the-peoples-princess",
+  },
   { name: "WELCOME SITE FOR BC GROUP", link: "/bc" },
   { name: "PERSONAL WEBSITE FOR HILARY", link: "/hilary" },
   { name: "PERSONAL WEBSITE FOR JONATHAN", link: "/jonathan" },
@@ -92,7 +100,7 @@ export default function RootLayout({
                   </p>
                   <p className="text-xs mt-2 text-neutral-400">MIT 2023 GRAD</p>
                   <p className="text-xs text-neutral-400">
-                    DATA ANALYST @ GUESS INC.
+                    AI SOLUTIONS ARCHITECT @ GUESS INC.
                   </p>
                 </div>
 

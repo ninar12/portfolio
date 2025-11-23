@@ -14,11 +14,19 @@ function LinkSvg() {
   )
 }
 const experiences = {
-  DataAnalyst: {
+  AISolutionsArchitect: {
     company: "CURRENT: GUESS, INC.",
+    role: "AI SOLUTIONS ARCHITECT",
+    location: "LA, CA",
+    date: "2025-CURRENT",
+    description: "",
+    link: "https://www.guess.com/us/en/home/",
+  },
+  DataAnalyst: {
+    company: "GUESS, INC.",
     role: "DATA ANALYST",
     location: "LA, CA",
-    date: "2024-CURR",
+    date: "2024-25",
     description: "",
     link: "https://www.guess.com/us/en/home/",
   },
