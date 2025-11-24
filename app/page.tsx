@@ -135,6 +135,20 @@ export default function HomePage() {
               </p>
             </div>
           </Link>
+          <Link href="/aesthetics-wiki" className="group">
+            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
+              <div className="overflow-hidden rounded-lg">
+                <PixelatedImage
+                  src="/dreamcore.jpeg"
+                  alt="Aesthetics Wiki Dataset"
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
+                Aesthetics Wiki Dataset
+              </p>
+            </div>
+          </Link>
           <Link href="/jonathan" className="group">
             <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
               <div className="overflow-hidden rounded-lg">

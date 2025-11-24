@@ -6,7 +6,7 @@ export default function ThePeoplesPrincess() {
       title="The People's Princess"
       subtitle="Mutual aid bulletin concept for neighbors helping neighbors"
       link="https://the-peoples-princess.vercel.app/"
-      description="Me and Fai, another MIT grad, coined The People's Princess as a playful brand for a serious tool: a hyper-local bulletin born in the wake of the SoCal wildfires and the overturn of Roe v. Wade, when neighbors needed rapid ways to connect with legal, housing, and care resources. The pilot is still a proof of concept, but I mapped content rules, designed a simple submission funnel, and prototyped post cards so organizers can amplify urgent requests in seconds. Coming soon: a version on lovable.com."
+      description="Fai, another MIT grad, and I coined The People's Princess as a playful brand for a serious tool: a hyper-local bulletin born in the wake of the SoCal wildfires and the overturn of Roe v. Wade, when neighbors needed rapid ways to connect with legal, housing, and care resources. The pilot is still a proof of concept, but I mapped content rules, designed a simple submission funnel, and prototyped post cards so organizers can amplify urgent requests in seconds. Coming soon: a version on lovable.com."
       techStack={[
         { type: "framework", name: "Next.js" },
         { type: "skill", name: "Feature development" },

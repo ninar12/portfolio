@@ -25,6 +25,19 @@ export default function About() {
               </span>{" "}
               (CS + Neuroscience), passionate about turning ideas into reality.
             </p>
+            <p className="text-lg text-neutral-300 leading-relaxed mt-4">
+              I also built and cleaned a structured database of the entire
+              Aesthetics Wiki to help creatives query subcultures and visual
+              references programmatically—it's freely available on{" "}
+              <a
+                href="https://huggingface.co/datasets/ninar12/aesthetics-wiki"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-400 underline">
+                Hugging Face
+              </a>
+              .
+            </p>
           </div>
         </div>
 

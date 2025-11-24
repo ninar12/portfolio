@@ -27,13 +27,17 @@ const work = [
 ]
 
 const personal = [
-  { name: "DBT CHATBOT", link: "/dbt-chatbot" },
-  { name: "IN & OUT GENERATOR", link: "/in-out" },
-  { name: "POMODORO TIMER", link: "/pomodoro" },
   {
     name: "THE PEOPLE'S PRINCESS",
     link: "/the-peoples-princess",
   },
+  {
+    name: "AESTHETICS WIKI DATASET",
+    link: "/aesthetics-wiki",
+  },
+  { name: "DBT CHATBOT", link: "/dbt-chatbot" },
+  { name: "IN & OUT GENERATOR", link: "/in-out" },
+  { name: "POMODORO TIMER", link: "/pomodoro" },
 ]
 
 export default function RootLayout({
