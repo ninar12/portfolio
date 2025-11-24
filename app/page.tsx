@@ -125,7 +125,7 @@ export default function HomePage() {
             <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
               <div className="overflow-hidden rounded-lg">
                 <PixelatedImage
-                  src="/princess-diana.jpeg"
+                  src="/peoples-princess.png"
                   alt="The People's Princess"
                   className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
                 />
@@ -139,13 +139,27 @@ export default function HomePage() {
             <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
               <div className="overflow-hidden rounded-lg">
                 <PixelatedImage
-                  src="/dreamcore.jpeg"
+                  src="/aesthetics-wiki.png"
                   alt="Aesthetics Wiki Dataset"
                   className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
                 Aesthetics Wiki Dataset
+              </p>
+            </div>
+          </Link>
+          <Link href="/black-friday-ai-deal-hunter" className="group">
+            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
+              <div className="overflow-hidden rounded-lg">
+                <PixelatedImage
+                  src="/blackfriday.jpeg"
+                  alt="Black Friday AI Deal Hunter"
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
+                Black Friday AI Deal Hunter
               </p>
             </div>
           </Link>

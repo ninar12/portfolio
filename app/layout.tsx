@@ -21,21 +21,20 @@ const work = [
     name: "ARC CAPITAL PARTNERS WEBSITE REFRESH",
     link: "/arc-capital-partners",
   },
+
   { name: "WELCOME SITE FOR BC GROUP", link: "/bc" },
   { name: "PERSONAL WEBSITE FOR HILARY", link: "/hilary" },
   { name: "PERSONAL WEBSITE FOR JONATHAN", link: "/jonathan" },
 ]
 
 const personal = [
-  {
-    name: "THE PEOPLE'S PRINCESS",
-    link: "/the-peoples-princess",
-  },
+  { name: "THE PEOPLE'S PRINCESS", link: "/the-peoples-princess" },
   {
     name: "AESTHETICS WIKI DATASET",
     link: "/aesthetics-wiki",
   },
   { name: "DBT CHATBOT", link: "/dbt-chatbot" },
+  { name: "BLACK FRIDAY AI DEAL HUNTER", link: "/black-friday-ai-deal-hunter" },
   { name: "IN & OUT GENERATOR", link: "/in-out" },
   { name: "POMODORO TIMER", link: "/pomodoro" },
 ]
