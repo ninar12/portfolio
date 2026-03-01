@@ -12,14 +12,6 @@ export default function Contact() {
           </p>
         </div>
         <ContactForm />
-        <div className="mt-12 text-center text-neutral-400">
-          <p>You can also reach me directly at:</p>
-          <a
-            href="mailto:ninajr11@icloud.com"
-            className="text-blue-400 hover:text-blue-300">
-            ninajr11@icloud.com
-          </a>
-        </div>
       </div>
     </div>
   )

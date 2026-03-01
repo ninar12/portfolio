@@ -16,17 +16,17 @@ export default function HomePage() {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          <Link href="/dbt-chatbot" className="group">
+          <Link href="/lora" className="group">
             <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
               <div className="overflow-hidden rounded-lg">
                 <PixelatedImage
-                  src="/cozebot.png"
-                  alt="DBT Chatbot"
+                  src="/lora.png"
+                  alt="Black Male Hair Style Lora"
                   className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
-                DBT Chatbot
+                Black Male Hair Style Lora
               </p>
             </div>
           </Link>
@@ -46,17 +46,47 @@ export default function HomePage() {
             </div>
           </Link>
 
-          <Link href="/bc" className="group">
+          <Link href="/aesthetics-wiki" className="group">
             <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
               <div className="overflow-hidden rounded-lg">
                 <PixelatedImage
-                  src="/bc.png"
-                  alt="BC Central America"
+                  src="/aesthetics-wiki.png"
+                  alt="Aesthetics Wiki Dataset"
                   className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
-                BC Central America
+                Aesthetics Wiki Dataset
+              </p>
+            </div>
+          </Link>
+
+          <Link href="/black-friday-ai-deal-hunter" className="group">
+            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
+              <div className="overflow-hidden rounded-lg">
+                <PixelatedImage
+                  src="/blackfriday.jpeg"
+                  alt="Black Friday AI Deal Hunter"
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
+                Black Friday AI Deal Hunter
+              </p>
+            </div>
+          </Link>
+
+          <Link href="/the-peoples-princess" className="group">
+            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
+              <div className="overflow-hidden rounded-lg">
+                <PixelatedImage
+                  src="/peoples-princess.png"
+                  alt="The People's Princess"
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
+                The People's Princess
               </p>
             </div>
           </Link>
@@ -76,6 +106,51 @@ export default function HomePage() {
             </div>
           </Link>
 
+          <Link href="/bc" className="group">
+            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
+              <div className="overflow-hidden rounded-lg">
+                <PixelatedImage
+                  src="/bc.png"
+                  alt="BC Central America"
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
+                BC Central America
+              </p>
+            </div>
+          </Link>
+
+          <Link href="/dbt-chatbot" className="group">
+            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
+              <div className="overflow-hidden rounded-lg">
+                <PixelatedImage
+                  src="/cozebot.png"
+                  alt="DBT Chatbot"
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
+                DBT Chatbot
+              </p>
+            </div>
+          </Link>
+
+          <Link href="/eastside-therapy-collective" className="group">
+            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
+              <div className="overflow-hidden rounded-lg">
+                <PixelatedImage
+                  src="/muses-etc.png"
+                  alt="Eastside Therapy Collective"
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
+                Eastside Therapy Collective
+              </p>
+            </div>
+          </Link>
+
           <Link href="/hilary" className="group">
             <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
               <div className="overflow-hidden rounded-lg">
@@ -87,6 +162,36 @@ export default function HomePage() {
               </div>
               <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
                 Hilary
+              </p>
+            </div>
+          </Link>
+
+          <Link href="/obscure-horror-curator" className="group">
+            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
+              <div className="overflow-hidden rounded-lg">
+                <PixelatedImage
+                  src="/horror-gpt.jpeg"
+                  alt="Obscure Horror Curator"
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
+                Obscure Horror Curator
+              </p>
+            </div>
+          </Link>
+
+          <Link href="/jonathan" className="group">
+            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
+              <div className="overflow-hidden rounded-lg">
+                <PixelatedImage
+                  src="/jonathan.png"
+                  alt="Jonathan"
+                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
+                Jonathan
               </p>
             </div>
           </Link>
@@ -117,78 +222,6 @@ export default function HomePage() {
               </div>
               <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
                 Pomodoro
-              </p>
-            </div>
-          </Link>
-
-          <Link href="/the-peoples-princess" className="group">
-            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
-              <div className="overflow-hidden rounded-lg">
-                <PixelatedImage
-                  src="/peoples-princess.png"
-                  alt="The People's Princess"
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
-                The People's Princess
-              </p>
-            </div>
-          </Link>
-          <Link href="/aesthetics-wiki" className="group">
-            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
-              <div className="overflow-hidden rounded-lg">
-                <PixelatedImage
-                  src="/aesthetics-wiki.png"
-                  alt="Aesthetics Wiki Dataset"
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
-                Aesthetics Wiki Dataset
-              </p>
-            </div>
-          </Link>
-          <Link href="/black-friday-ai-deal-hunter" className="group">
-            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
-              <div className="overflow-hidden rounded-lg">
-                <PixelatedImage
-                  src="/blackfriday.jpeg"
-                  alt="Black Friday AI Deal Hunter"
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
-                Black Friday AI Deal Hunter
-              </p>
-            </div>
-          </Link>
-          <Link href="/jonathan" className="group">
-            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
-              <div className="overflow-hidden rounded-lg">
-                <PixelatedImage
-                  src="/jonathan.png"
-                  alt="Jonathan"
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
-                Jonathan
-              </p>
-            </div>
-          </Link>
-
-          <Link href="/lora" className="group">
-            <div className="bg-neutral-900/30 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all p-4 h-full">
-              <div className="overflow-hidden rounded-lg">
-                <PixelatedImage
-                  src="/lora.png"
-                  alt="Black Male Hair Style Lora"
-                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <p className="text-pink-300 text-center mt-4 group-hover:text-pink-400 transition-colors">
-                Black Male Hair Style Lora
               </p>
             </div>
           </Link>

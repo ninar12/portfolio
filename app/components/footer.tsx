@@ -27,12 +27,7 @@ const Footer = () => {
             className="hover:text-blue-400  transition-colors">
             GitHub
           </a>
-          <a
-            href="mailto:ninajr11@icloud.com"
-            className="hover:text-blue-400 transition-colors">
-            Email
-          </a>
-          <a
+<a
             href="https://huggingface.co/ninar12"
             className="hover:text-blue-400 transition-colors">
             Huggingface

@@ -15,26 +15,30 @@ import { StyleConveyorBelt } from "./components/StyleConveyerBelt"
 const cx = (...classes: any) => classes.filter(Boolean).join(" ")
 
 const work = [
-  { name: "STABLE DIFFUSION GENERATOR", link: "/stable" },
-  { name: "BLACK HAIRSTYLE LORA", link: "/lora" },
   {
     name: "ARC CAPITAL PARTNERS WEBSITE REFRESH",
     link: "/arc-capital-partners",
   },
-
+  { name: "STABLE DIFFUSION GENERATOR", link: "/stable" },
   { name: "WELCOME SITE FOR BC GROUP", link: "/bc" },
+  { name: "EASTSIDE THERAPY COLLECTIVE", link: "/eastside-therapy-collective" },
   { name: "PERSONAL WEBSITE FOR HILARY", link: "/hilary" },
   { name: "PERSONAL WEBSITE FOR JONATHAN", link: "/jonathan" },
 ]
 
 const personal = [
-  { name: "THE PEOPLE'S PRINCESS", link: "/the-peoples-princess" },
+  { name: "BLACK HAIRSTYLE LORA", link: "/lora" },
   {
     name: "AESTHETICS WIKI DATASET",
     link: "/aesthetics-wiki",
   },
-  { name: "DBT CHATBOT", link: "/dbt-chatbot" },
   { name: "BLACK FRIDAY AI DEAL HUNTER", link: "/black-friday-ai-deal-hunter" },
+  { name: "THE PEOPLE'S PRINCESS", link: "/the-peoples-princess" },
+  {
+    name: "OBSCURE HORROR CURATOR",
+    link: "/obscure-horror-curator",
+  },
+  { name: "DBT CHATBOT", link: "/dbt-chatbot" },
   { name: "IN & OUT GENERATOR", link: "/in-out" },
   { name: "POMODORO TIMER", link: "/pomodoro" },
 ]
