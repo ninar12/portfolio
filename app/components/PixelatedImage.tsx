@@ -1,79 +1,99 @@
 "use client"
 import React, { useState, useEffect, useRef } from "react"
+import NextImage from "next/image"
 
 interface PixelatedImageProps {
   src: string
   alt?: string
   className?: string
+  priority?: boolean
 }
 
 const PixelatedImage: React.FC<PixelatedImageProps> = ({
   src,
   alt = "",
   className = "",
+  priority = false,
 }) => {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [dimensions, setDimensions] = useState<{ width: number; height: number } | null>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLImageElement | null>(null)
 
   useEffect(() => {
-    const canvas = canvasRef.current
-    const ctx = canvas?.getContext("2d")
-    if (!canvas || !ctx) return
+    const container = containerRef.current
+    if (!container) return
 
-    const img = new Image()
-    img.src = src
-    img.onload = () => {
-      // Set canvas size to match image
-      canvas.width = img.width
-      canvas.height = img.height
+    const startLoad = () => {
+      const canvas = canvasRef.current
+      const ctx = canvas?.getContext("2d")
+      if (!canvas || !ctx) return
 
-      // Function to draw pixelated version
-      const drawPixelated = (pixelSize: number) => {
-        ctx.drawImage(img, 0, 0, pixelSize, pixelSize)
-        ctx.imageSmoothingEnabled = false
-        ctx.drawImage(
-          canvas,
-          0,
-          0,
-          pixelSize,
-          pixelSize,
-          0,
-          0,
-          canvas.width,
-          canvas.height
-        )
+      const img = new Image()
+      img.crossOrigin = "anonymous"
+      img.src = src
+      img.onload = () => {
+        canvas.width = img.width
+        canvas.height = img.height
+        setDimensions({ width: img.width, height: img.height })
+
+        const drawPixelated = (pixelSize: number) => {
+          ctx.drawImage(img, 0, 0, pixelSize, pixelSize)
+          ctx.imageSmoothingEnabled = false
+          ctx.drawImage(canvas, 0, 0, pixelSize, pixelSize, 0, 0, canvas.width, canvas.height)
+        }
+
+        const pixelSizes = [10, 20, 40, 80]
+        const interval = 2000 / pixelSizes.length
+
+        pixelSizes.forEach((size, index) => {
+          setTimeout(() => drawPixelated(size), index * interval)
+        })
+
+        setTimeout(() => setIsLoaded(true), 2000)
       }
 
-      // Progressive pixelation
-      const pixelSizes = [10, 20, 40, 80]
-      const interval = 2000 / pixelSizes.length // 2000ms total duration
-
-      pixelSizes.forEach((size, index) => {
-        setTimeout(() => {
-          drawPixelated(size)
-        }, index * interval)
-      })
-
-      // After all pixelation steps, show original image
-      setTimeout(() => {
-        setIsLoaded(true)
-      }, 2000)
+      imageRef.current = img
     }
 
-    imageRef.current = img
+    if (priority) {
+      startLoad()
+      return () => {
+        if (imageRef.current) imageRef.current.onload = null
+      }
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return
+        observer.disconnect()
+        startLoad()
+      },
+      { rootMargin: "200px" }
+    )
+
+    observer.observe(container)
 
     return () => {
-      if (imageRef.current) {
-        imageRef.current.onload = null
-      }
+      observer.disconnect()
+      if (imageRef.current) imageRef.current.onload = null
     }
-  }, [src])
+  }, [src, priority])
 
   return (
-    <div className={`relative ${className}`}>
+    <div ref={containerRef} className={`relative ${className}`}>
       {!isLoaded ? (
         <canvas ref={canvasRef} className="w-full h-full" />
+      ) : dimensions ? (
+        <NextImage
+          src={src}
+          alt={alt}
+          width={dimensions.width}
+          height={dimensions.height}
+          className="w-full h-full"
+          priority={priority}
+        />
       ) : (
         <img src={src} alt={alt} className="w-full h-full" />
       )}

@@ -1,42 +1,39 @@
-# Portfolio Blog Starter
+# Nina Rhone — Portfolio
 
-This is a porfolio site template complete with a blog. Includes:
+Personal portfolio site for Nina Rhone, Creative Technologist and AI Solutions Architect at GUESS Inc. (MIT 2023).
 
-- MDX and Markdown support
-- Optimized for SEO (sitemap, robots, JSON-LD schema)
-- RSS Feed
-- Dynamic OG images
-- Syntax highlighting
-- Tailwind v4
-- Vercel Speed Insights / Web Analytics
+Showcases commission and personal projects spanning AI/ML, web development, and creative technology.
+
+## Architecture
+
+```mermaid
+graph TD
+    layout["app/layout.tsx\n(Root Layout)"]
+    sidebar["Sidebar\n— project nav\n— resume\n— tools + skills"]
+    navbar["Navbar"]
+    footer["Footer"]
+    main["Main Content Area"]
+
+    layout --> navbar
+    layout --> sidebar
+    layout --> main
+    layout --> footer
+
+    main --> home["app/page.tsx\nGallery Grid"]
+    main --> project["app/[project]/page.tsx\nProject Page"]
+    main --> about["app/about/page.tsx"]
+    main --> contact["app/contact/page.tsx"]
+
+    project --> card["ProjectCard\n(components/Card.tsx)"]
+    home --> piximg["PixelatedImage\n(components/PixelatedImage.tsx)"]
+    card --> piximg
+
+    layout --> vercel["Vercel\n(hosting · analytics · speed insights)"]
+```
+
+## Stack
+
+- Next.js (App Router) + TypeScript
+- Tailwind CSS
 - Geist font
-
-## Demo
-
-https://portfolio-blog-starter.vercel.app
-
-## How to Use
-
-You can choose from one of the following two methods to use this repository:
-
-### One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/blog&project-name=blog&repository-name=blog)
-
-### Clone and Deploy
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
-
-```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/solutions/blog blog
-```
-
-Then, run Next.js in development mode:
-
-```bash
-pnpm dev
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/templates) ([Documentation](https://nextjs.org/docs/app/building-your-application/deploying)).
+- Vercel (hosting, analytics, speed insights)
