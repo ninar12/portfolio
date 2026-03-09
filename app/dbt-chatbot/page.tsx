@@ -5,6 +5,8 @@ export default function Dbt() {
     <ProjectCard
       title="DBT Chatbot"
       subtitle="Help to practice your DBT skills"
+      problem="DBT (Dialectical Behavior Therapy) skills are taught in structured settings but hard to recall and apply in daily life without a coach or reference tool."
+      solution="A Cozebot chatbot ingesting a free DBT workbook PDF and affirmation resources as a knowledge base, providing conversational skill recall and daily practice prompts."
       link="https://www.coze.com/store/agent/7359282529574060037?bot_id=true"
       description="I came across a cozebot hackathon where you can generate your own chatbot, that can be trained with information gathered from any unstructured data, e.g. PDFs, csvs, etc.. I thought about how in DBT, how helpful the tools and skills I learned were, but how they were hard to remember which to apply in daily life. So, I found a free PDF of a DBT workbook and added that as an information source, along with other related information, like a list of helpful affirmations. Unfortunately Cozebot is now paywalled, but I had fun creating the chatbot."
       techStack={[
@@ -15,7 +17,13 @@ export default function Dbt() {
       year="2024"
       image="cozebot.png"
       skills="cozebot, hackathon, DBT, mindfulness & tech, chatbot development"
-      githubLink={""}
+      impact="Functional chatbot deployed to the Coze store — demonstrates RAG-adjacent architecture (PDF knowledge base + conversational prompts) built in a hackathon context."
+      githubLink=""
+      diagram={`graph LR
+  A["DBT skills are\\nhard to recall daily"] --> B["Source free DBT\\nworkbook PDF"]
+  B --> C["Ingest into Cozebot\\nas knowledge base"]
+  C --> D["Add affirmations\\n+ conversational prompts"]
+  D --> E["Chatbot coaches users\\nthrough DBT skill recall"]`}
     />
   )
 }

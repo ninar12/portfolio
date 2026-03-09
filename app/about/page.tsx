@@ -24,11 +24,10 @@ export default function About() {
             Nina Rhone
           </h1>
           <h2 className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-pink-500 via-purple-100 to-pink-500 text-transparent bg-clip-text animate-gradient">
-            AI Solutions & Full Stack Development
+            Enterprise AI Solutions Architect
           </h2>
           <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-            From a polished website to a custom AI integration — I build what
-            your business actually needs.
+            From enterprise LLM integrations to full-stack products — I build what actually ships.
           </p>
         </div>
 
@@ -43,32 +42,47 @@ export default function About() {
             (CS + Neuroscience) and currently an AI Solutions Architect at GUESS
             Inc. I've shipped client websites, trained machine learning models,
             built full stack web apps, and integrated AI into real workflows. I
-            take projects from idea to deployed product.
+            take projects from idea to deployed product. At GUESS Inc., I
+            architect AI integrations across enterprise retail workflows —
+            bridging the gap between model capabilities and business team needs.
           </p>
-          <p className="text-lg text-neutral-300 leading-relaxed mt-4">
-            I also built and published a structured dataset of the entire
-            Aesthetics Wiki on{" "}
-            <a
-              href="https://huggingface.co/datasets/ninar12/aesthetics-wiki"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-400 underline">
-              Hugging Face
-            </a>{" "}
-            — 239+ downloads and counting.
-          </p>
+        </div>
+
+        {/* Enterprise Context */}
+        <div className="bg-neutral-900/30 p-6 rounded-xl border border-pink-500/20">
+          <h3 className="text-pink-300 font-semibold text-sm mb-4">
+            WHAT I BRING TO ENTERPRISE AI TEAMS
+          </h3>
+          <ul className="space-y-2 text-sm text-neutral-300">
+            <li className="flex items-start gap-2">
+              <span className="text-pink-400 mt-0.5">_</span>
+              <span>Experience shipping AI tools inside a Fortune 500 retail environment (GUESS Inc.)</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-pink-400 mt-0.5">_</span>
+              <span>MIT background in Computation & Cognition — I understand models, not just APIs</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-pink-400 mt-0.5">_</span>
+              <span>Track record designing for non-technical stakeholders: prompt UX, knowledge base curation, guardrail design</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-pink-400 mt-0.5">_</span>
+              <span>Full-stack ownership from prototype to deployed, cloud-hosted product</span>
+            </li>
+          </ul>
         </div>
 
         {/* Services */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-neutral-900/30 p-6 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all">
             <h3 className="text-lg font-semibold text-pink-300 mb-3">
-              AI Integration
+              Enterprise AI Integration
             </h3>
             <p className="text-neutral-400 text-sm leading-relaxed">
-              Custom GPTs, chatbots, LLM-powered workflows, AI-assisted tooling,
-              prompt engineering, and model fine-tuning for your specific use
-              case.
+              LLM workflow architecture, RAG systems, model fine-tuning, prompt
+              engineering, and AI tooling designed for real business use cases
+              and non-technical stakeholders.
             </p>
           </div>
           <div className="bg-neutral-900/30 p-6 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all">
@@ -83,11 +97,12 @@ export default function About() {
           </div>
           <div className="bg-neutral-900/30 p-6 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all">
             <h3 className="text-lg font-semibold text-pink-300 mb-3">
-              Website Design & Editing
+              Web Consulting
             </h3>
             <p className="text-neutral-400 text-sm leading-relaxed">
-              Wix, Squarespace, WordPress, or custom — refreshes, fixes, new
-              pages, branding, and UX improvements that actually convert.
+              Client-ready web presences built or refreshed to spec — new
+              pages, branding, UX improvements, and platform migrations that
+              actually convert.
             </p>
           </div>
         </div>
@@ -114,15 +129,9 @@ export default function About() {
         {/* Background Animation */}
         <style jsx global>{`
           @keyframes gradient {
-            0% {
-              background-position: 0% 50%;
-            }
-            50% {
-              background-position: 100% 50%;
-            }
-            100% {
-              background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
           }
           .animate-gradient {
             background-size: 200% auto;

@@ -15,6 +15,8 @@ const PixelatedImage: React.FC<PixelatedImageProps> = ({
   className = "",
   priority = false,
 }) => {
+  const normalizedSrc = src.startsWith("/") || src.startsWith("http") ? src : `/${src}`
+
   const [isLoaded, setIsLoaded] = useState(false)
   const [dimensions, setDimensions] = useState<{ width: number; height: number } | null>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -83,19 +85,21 @@ const PixelatedImage: React.FC<PixelatedImageProps> = ({
 
   return (
     <div ref={containerRef} className={`relative ${className}`}>
-      {!isLoaded ? (
-        <canvas ref={canvasRef} className="w-full h-full" />
-      ) : dimensions ? (
+      <canvas
+        ref={canvasRef}
+        className="w-full h-full transition-opacity duration-500"
+        style={{ opacity: isLoaded ? 0 : 1 }}
+      />
+      {dimensions && (
         <NextImage
-          src={src}
+          src={normalizedSrc}
           alt={alt}
           width={dimensions.width}
           height={dimensions.height}
-          className="w-full h-full"
+          className="w-full h-full absolute inset-0 transition-opacity duration-500"
+          style={{ opacity: isLoaded ? 1 : 0 }}
           priority={priority}
         />
-      ) : (
-        <img src={src} alt={alt} className="w-full h-full" />
       )}
     </div>
   )

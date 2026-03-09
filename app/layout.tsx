@@ -14,31 +14,28 @@ import { StyleConveyorBelt } from "./components/StyleConveyerBelt"
 
 const cx = (...classes: any) => classes.filter(Boolean).join(" ")
 
-const work = [
-  {
-    name: "ARC CAPITAL PARTNERS WEBSITE REFRESH",
-    link: "/arc-capital-partners",
-  },
+const aiml = [
+  { name: "BLACK FRIDAY AI DEAL HUNTER", link: "/black-friday-ai-deal-hunter" },
+  { name: "BLACK HAIRSTYLE LORA", link: "/lora" },
   { name: "STABLE DIFFUSION GENERATOR", link: "/stable" },
-  { name: "WELCOME SITE FOR BC GROUP", link: "/bc" },
-  { name: "EASTSIDE THERAPY COLLECTIVE", link: "/eastside-therapy-collective" },
-  { name: "PERSONAL WEBSITE FOR HILARY", link: "/hilary" },
-  { name: "PERSONAL WEBSITE FOR JONATHAN", link: "/jonathan" },
+  { name: "AESTHETICS WIKI DATASET", link: "/aesthetics-wiki" },
+  { name: "OBSCURE HORROR CURATOR", link: "/obscure-horror-curator" },
+  { name: "DBT CHATBOT", link: "/dbt-chatbot" },
 ]
 
-const personal = [
-  { name: "BLACK HAIRSTYLE LORA", link: "/lora" },
-  {
-    name: "AESTHETICS WIKI DATASET",
-    link: "/aesthetics-wiki",
-  },
-  { name: "BLACK FRIDAY AI DEAL HUNTER", link: "/black-friday-ai-deal-hunter" },
+const product = [
   { name: "THE PEOPLE'S PRINCESS", link: "/the-peoples-princess" },
-  {
-    name: "OBSCURE HORROR CURATOR",
-    link: "/obscure-horror-curator",
-  },
-  { name: "DBT CHATBOT", link: "/dbt-chatbot" },
+]
+
+const consulting = [
+  { name: "ARC CAPITAL PARTNERS", link: "/arc-capital-partners" },
+  { name: "BC GROUP", link: "/bc" },
+  { name: "EASTSIDE THERAPY COLLECTIVE", link: "/eastside-therapy-collective" },
+  { name: "HILARY MACGREGOR", link: "/hilary" },
+  { name: "JONATHAN FERNANDEZ", link: "/jonathan" },
+]
+
+const experiments = [
   { name: "IN & OUT GENERATOR", link: "/in-out" },
   { name: "POMODORO TIMER", link: "/pomodoro" },
 ]
@@ -58,7 +55,7 @@ export default function RootLayout({
       className={cx(
         "text-black text-xs bg-white",
         GeistSans.variable,
-        GeistMono.variable
+        GeistMono.variable,
       )}>
       <body className="antialiased h-full">
         <div className="flex flex-col min-h-screen">
@@ -103,7 +100,7 @@ export default function RootLayout({
                     NINA RHONE
                   </h1>
                   <p className="text-sm text-neutral-300 mt-1">
-                    CREATIVE TECHNOLOGIST
+                    AI SOLUTIONS ARCHITECT
                   </p>
                   <p className="text-xs mt-2 text-neutral-400">MIT 2023 GRAD</p>
                   <p className="text-xs text-neutral-400">
@@ -111,13 +108,13 @@ export default function RootLayout({
                   </p>
                 </div>
 
-                {/* Commission Projects */}
+                {/* AI + ML */}
                 <div className="mb-8">
                   <h2 className="text-sm font-semibold text-pink-300 mb-2">
-                    COMMISSION PROJECTS
+                    AI + ML
                   </h2>
                   <div className="space-y-2">
-                    {work.map((item, index) => (
+                    {aiml.map((item, index) => (
                       <Link
                         key={index}
                         href={item.link}
@@ -128,17 +125,51 @@ export default function RootLayout({
                   </div>
                 </div>
 
-                {/* Personal Projects */}
+                {/* Product */}
                 <div className="mb-8">
                   <h2 className="text-sm font-semibold text-pink-300 mb-2">
-                    PERSONAL PROJECTS
+                    PRODUCT
                   </h2>
                   <div className="space-y-2">
-                    {personal.map((item, index) => (
+                    {product.map((item, index) => (
                       <Link
                         key={index}
                         href={item.link}
                         className="block text-sm text-neutral-400 hover:text-pink-400 transition-colors">
+                        _{item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Consulting */}
+                <div className="mb-8">
+                  <h2 className="text-sm font-semibold text-pink-300 mb-2">
+                    CONSULTING
+                  </h2>
+                  <div className="space-y-2">
+                    {consulting.map((item, index) => (
+                      <Link
+                        key={index}
+                        href={item.link}
+                        className="block text-sm text-neutral-400 hover:text-pink-400 transition-colors">
+                        _{item.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Experiments */}
+                <div className="mb-8">
+                  <h2 className="text-sm font-semibold text-pink-300 mb-2">
+                    EXPERIMENTS
+                  </h2>
+                  <div className="space-y-2">
+                    {experiments.map((item, index) => (
+                      <Link
+                        key={index}
+                        href={item.link}
+                        className="block text-sm text-neutral-500 hover:text-pink-400 transition-colors">
                         _{item.name}
                       </Link>
                     ))}
@@ -168,7 +199,7 @@ export default function RootLayout({
             </aside>
 
             {/* Main Content */}
-            <main className="flex-1 p-4">{children}</main>
+            <main className="flex-1 px-6 py-6 md:px-10 md:py-8">{children}</main>
           </div>
 
           <Footer />
