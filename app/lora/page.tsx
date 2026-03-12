@@ -6,7 +6,7 @@ export default function Lora() {
       title="BLACK HAIRSTYLE LORA"
       subtitle="Stable Diffusion Finetuned"
       problem="Stable Diffusion's training data is racially skewed — the model lacks accurate representation of Black male hairstyles and their cultural context."
-      solution="A fine-tuned SDXL LoRA model trained on CC-licensed images of Black male hairstyles, labeled with culturally accurate names, and published publicly on Replicate."
+      solution="A fine-tuned SDXL LoRA model (407 runs) trained on CC-licensed images of Black male hairstyles, labeled with culturally accurate names, and published publicly on Replicate."
       description="I used an open source trainer in replicate to train a SDXL Lora (Stable Diffusion is an image generation model), trained on black male hairstyles. As the images that Stable Diffusion was trained are racially skewed, there are not enough data sources about the names and cultural significance of all black male hairstyles. The biggest challenge was collecting the training data, because I wanted to follow the Creative Commons rules about using images on the internet for people's privacy. I collected quite a few male black hairstyles, and labeled them with their names."
       year="2024"
       techStack={[

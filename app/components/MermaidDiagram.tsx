@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useRef } from "react"
 
-export default function MermaidDiagram({ chart }: { chart: string }) {
+export default function MermaidDiagram({ chart, large }: { chart: string; large?: boolean }) {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function MermaidDiagram({ chart }: { chart: string }) {
           nodeBorder: "#ec489960",
           edgeLabelBackground: "#111",
           fontFamily: "inherit",
-          fontSize: "13px",
+          fontSize: large ? "16px" : "13px",
         },
       })
 
@@ -35,5 +35,5 @@ export default function MermaidDiagram({ chart }: { chart: string }) {
     })
   }, [chart])
 
-  return <div ref={ref} className="w-full" />
+  return <div ref={ref} className={large ? "w-full [&_svg]:w-full [&_svg]:max-w-none [&_svg]:h-auto" : "w-full"} />
 }
