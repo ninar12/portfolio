@@ -17,14 +17,13 @@ export default function ThePeoplesPrincess() {
       ]}
       year="2024"
       skills="coordinating disaster relief asks, connecting reproductive care support, mutual aid storytelling, lightweight CMS architecture, and mobile-first posting flows"
-      impact="Proof-of-concept live on Vercel; v2 in progress on lovable.com."
       image="peoples-princess.png"
       githubLink=""
       diagram={`graph LR
-  A["SoCal wildfires expose\\ngap in mutual aid infra"] --> B["Define content rules\\n+ submission funnel"]
-  B --> C["Build bulletin board\\nin Next.js + Vercel"]
-  C --> D["Prototype postcards\\nfor rapid amplification"]
-  D --> E["Proof-of-concept\\ncivic tech platform live"]`}
+  A[Wildfires expose mutual aid gap] --> B[Define content rules + funnel]
+  B --> C[Build bulletin board in Next.js]
+  C --> D[Prototype postcards for sharing]
+  D --> E[Civic tech proof-of-concept live]`}
     />
   )
 }

@@ -17,14 +17,13 @@ export default function EastsideTherapyCollective() {
       ]}
       year="2024"
       skills="client site build, content design, interactive UI, typography, blending function with aesthetic intent"
-      impact="Accessible client-facing site live with a custom interactive muses feature unique to the collective's brand."
       image="muses-etc.png"
       githubLink=""
       diagram={`graph LR
-  A["Therapy collective needs\\naccessible client-facing site"] --> B["Design warm UX\\nin Wix"]
-  B --> C["Build interactive\\nmuses page feature"]
-  C --> D["Test navigation\\nfor ease of use"]
-  D --> E["Accessible site\\nlive for collective"]`}
+  A[Collective needs accessible site] --> B[Design warm UX in Wix]
+  B --> C[Build interactive muses page]
+  C --> D[Test navigation ease of use]
+  D --> E[Accessible site live]`}
     />
   )
 }

@@ -19,12 +19,11 @@ export default function BC() {
       image="bc.png"
       githubLink=""
       skills="wordpress development and customization, collaboration with a team, project management, client communication"
-      impact="Delivered live site for a global brand via agency collaboration with Patternbreak."
       diagram={`graph LR
-  A["Global apparel firm\\nneeds welcome presence"] --> B["Select Uncode\\nWordPress template"]
-  B --> C["Customize CSS\\n+ contact form via Google Scripts"]
-  C --> D["Client review\\n+ content handoff"]
-  D --> E["Live site for\\nBC Group global brand"]`}
+  A[Global apparel firm needs site] --> B[Select Uncode WordPress template]
+  B --> C[Customize CSS + contact form]
+  C --> D[Client review + content handoff]
+  D --> E[Live site for BC Group]`}
     />
   )
 }

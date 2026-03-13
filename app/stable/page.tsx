@@ -22,13 +22,12 @@ export default function Stable() {
       link="https://www.patternbreak.ai/"
       image="stablediffusion.png"
       skills="development, collaboration, R&D, idea generation, design, and deployment"
-      impact="Deployed production tool used by Patternbreak agency for client AI image work."
       githubLink=""
       diagram={`graph LR
-  A["Agency needs\\nconsistent AI image prompts"] --> B["Research prompt\\nengineering patterns"]
-  B --> C["Build recipe UI\\nin Next.js with fal.ai"]
-  C --> D["HuggingFace model\\nauto-generates prompt drafts"]
-  D --> E["Deployed tool\\nfor Patternbreak agency"]`}
+  A[Agency needs consistent prompts] --> B[Research prompt engineering]
+  B --> C[Build recipe UI in Next.js]
+  C --> D[HuggingFace auto-generates drafts]
+  D --> E[Deployed for Patternbreak]`}
     />
   )
 }

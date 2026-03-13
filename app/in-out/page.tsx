@@ -19,10 +19,10 @@ export default function InOut() {
       image="inout.png"
       githubLink="https://github.com/ninar12/in-and-out"
       diagram={`graph LR
-  A["Gen Z makes\\nannual in-out lists"] --> B["Discover React-95\\nretro component library"]
-  B --> C["Build list generator\\nwith Y2K aesthetic"]
-  C --> D["Deploy to Netlify"]
-  D --> E["Shareable retro\\n2025 in-out list tool"]`}
+  A[Gen Z makes annual in-out lists] --> B[Discover React-95 component library]
+  B --> C[Build list generator with Y2K aesthetic]
+  C --> D[Deploy to Netlify]
+  D --> E[Shareable retro in-out list tool]`}
     />
   )
 }

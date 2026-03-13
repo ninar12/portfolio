@@ -14,15 +14,14 @@ export default function Lora() {
         { type: "other", name: "CC Photos of black men hairstyles" },
       ]}
       skills="model generation, ML training on replicate, Stable Diffusion, Lora, data collection and labeling, and navigating the ethics of training data"
-      impact="Fine-tuned model published publicly on Replicate, improving representation of Black hairstyles in AI-generated imagery."
       link="https://replicate.com/ninar12/sdxlblackmalehairstyles"
       image="lora.png"
       githubLink=""
       diagram={`graph LR
-  A["SDXL underrepresents\\nBlack hairstyle data"] --> B["Curate CC-licensed\\nimages + cultural labels"]
-  B --> C["SDXL LoRA training\\non Replicate"]
-  C --> D["Fine-tuned model\\npublished on Replicate"]
-  D --> E["Accurate, culturally\\naware image generation"]`}
+  A[SDXL underrepresents Black hairstyles] --> B[Curate CC-licensed images + labels]
+  B --> C[SDXL LoRA training on Replicate]
+  C --> D[Fine-tuned model published]
+  D --> E[Culturally aware image generation]`}
     />
   )
 }

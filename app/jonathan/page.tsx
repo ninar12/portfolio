@@ -15,14 +15,14 @@ export default function Jonathan() {
       ]}
       year="2024"
       skills="squarespace, website design, user experience, and content creation"
-      impact="Personal brand site live at jonathan-fernandez.com displaying his full body of creative work."
       image="jonathan.png"
+      video="jonfernandez.mov"
       githubLink=""
       diagram={`graph LR
-  A["Writer-director needs\\npersonal brand site"] --> B["Scope content\\n+ navigation structure"]
-  B --> C["Build on Squarespace\\nwith custom CSS"]
-  C --> D["Display work reel\\nteaching + contact"]
-  D --> E["Personal brand site\\nlive for Jonathan"]`}
+  A[Writer-director needs brand site] --> B[Scope content + navigation]
+  B --> C[Build on Squarespace with custom CSS]
+  C --> D[Display work reel + contact]
+  D --> E[Personal brand site live]`}
     />
   )
 }

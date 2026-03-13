@@ -2,16 +2,39 @@
 import { useState } from "react"
 import PixelatedImage from "./PixelatedImage"
 
+const BLOCKED_DOMAINS = [
+  "chatgpt.com",
+  "huggingface.co",
+  "replicate.com",
+  "coze.com",
+  "arccapitalpartners.com",
+  "bccentralamerica.com",
+  "hilarymacgregor.com",
+  "jonathan-fernandez.com",
+]
+
+function isBlocked(url?: string): boolean {
+  if (!url) return false
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, "")
+    return BLOCKED_DOMAINS.some((d) => host === d || host.endsWith("." + d))
+  } catch {
+    return false
+  }
+}
+
 export default function DemoEmbed({
   url,
   fallbackImage,
+  fallbackVideo,
 }: {
   url?: string
   fallbackImage?: string
+  fallbackVideo?: string
 }) {
-  const [failed, setFailed] = useState(false)
+  const [failed, setFailed] = useState(() => isBlocked(url))
 
-  if (!url && !fallbackImage) return null
+  if (!url && !fallbackImage && !fallbackVideo) return null
 
   const browserChrome = url ? (
     <div className="bg-neutral-800 px-4 py-2.5 flex items-center gap-3 border-b border-neutral-700 shrink-0">
@@ -33,7 +56,29 @@ export default function DemoEmbed({
     </div>
   ) : null
 
-  const imageFallback = fallbackImage ? (
+  const mediaFallback = fallbackVideo ? (
+    <div className="bg-neutral-950 p-6 flex flex-col gap-4">
+      <video
+        src={fallbackVideo}
+        className="w-full rounded-xl"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+      {url && (
+        <div className="flex justify-center">
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2 bg-pink-500 text-white text-sm rounded-lg hover:bg-pink-600 transition-colors">
+            View Live Demo ↗
+          </a>
+        </div>
+      )}
+    </div>
+  ) : fallbackImage ? (
     <div className="bg-neutral-950 p-6 flex flex-col gap-4">
       <PixelatedImage src={fallbackImage} className="w-full rounded-xl" />
       {url && (
@@ -65,7 +110,7 @@ export default function DemoEmbed({
     <div className="rounded-2xl overflow-hidden border border-neutral-700 shadow-2xl shadow-black/50 flex flex-col h-full">
       {browserChrome}
       {!url || failed ? (
-        imageFallback
+        mediaFallback
       ) : (
         <div className="relative bg-neutral-950 flex-1 min-h-[400px]">
           <iframe

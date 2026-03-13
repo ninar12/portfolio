@@ -17,14 +17,13 @@ export default function ArcCapitalPartners() {
       ]}
       year="2024"
       skills="debugging a legacy WordPress stack, modernizing templates"
-      impact="Fully responsive, brand-aligned site live on WP Engine with resolved plugin conflicts and coaching on content workflows."
       image="arccapitalpartners.png"
       githubLink=""
       diagram={`graph LR
-  A["Investment firm site\\nis unresponsive + broken"] --> B["Audit WordPress stack\\nmap plugin conflicts"]
-  B --> C["Resolve conflicts\\nmodernize templates"]
-  C --> D["Optimize caching\\ntighten security rules"]
-  D --> E["Polished responsive\\nsite on WP Engine"]`}
+  A[Investment firm site is broken] --> B[Audit WordPress + plugin conflicts]
+  B --> C[Resolve conflicts + modernize]
+  C --> D[Optimize caching + security]
+  D --> E[Polished responsive site live]`}
     />
   )
 }

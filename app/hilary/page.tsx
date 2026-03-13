@@ -16,14 +16,13 @@ export default function Hilary() {
       ]}
       year="2024"
       skills="web development, website design, user experience, and content creation"
-      impact="Personal brand site live at hilarymacgregor.com — brand identity developed in Figma and translated to Wix."
       image="hilary.png"
       githubLink=""
       diagram={`graph LR
-  A["Therapist needs\\nbrand + web presence"] --> B["Develop brand identity\\nin Figma"]
-  B --> C["Build Wix site\\nwith custom CSS"]
-  C --> D["Iterate on aesthetic\\n+ tone with client"]
-  D --> E["Personal therapist site\\nlive with brand coherence"]`}
+  A[Therapist needs brand + web presence] --> B[Develop brand identity in Figma]
+  B --> C[Build Wix site with custom CSS]
+  C --> D[Iterate on aesthetic with client]
+  D --> E[Personal therapist site live]`}
     />
   )
 }

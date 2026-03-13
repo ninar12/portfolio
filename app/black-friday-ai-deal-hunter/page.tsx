@@ -4,34 +4,27 @@ export default function BlackFridayAIDealHunter() {
   return (
     <ProjectCard
       title="Black Friday AI Deal Hunter"
-      subtitle="Scrapes retailer promo pages → LLM normalizes messy deal copy → ranked deals served via Cloud Run REST API"
+      subtitle="LLM-powered retail data pipeline on Google Cloud Run"
       status="in progress"
       link="https://black-friday-ai-deal-hunter-820272415386.us-west1.run.app/"
-      problem="Retailer promo pages are inconsistent by design — different HTML structures, marketing copy mixed with actual discount percentages, no standard format. Before you can rank deals, you have to solve a normalization problem."
-      solution="A two-stage pipeline. Stage 1: a scraper ingests retailer promo pages and extracts raw HTML deal copy. Stage 2: a Gemini-powered prompt normalizes each deal into a structured object — name, original price, discounted price, discount %, and category. Results are ranked and served via a Cloud Run REST endpoint."
-      description="The core engineering challenge was prompt design: getting Gemini to reliably extract structured fields from unstructured marketing copy like '40% off sitewide — ends tonight!' The prompt uses a JSON schema to enforce output shape and handles edge cases like missing prices or vague percentage ranges. The ranking heuristic weights discount percentage, product category popularity, and recency. Cloud Run gives cold-start-tolerant, zero-maintenance hosting for the API layer while the UI is in development."
+      problem="Retail promo data is scattered across hundreds of retailer pages with inconsistent formats, making real-time price comparison nearly impossible without manual effort."
+      solution="A Cloud Run API that scrapes retailer promotions, passes the copy and metadata through Google AI Studio to normalize and rank deals, and matches items to comparable products so shoppers see the best price instantly."
+      description="This in-progress Black Friday scout scrapes retailer promos, pushes the copy + metadata through Google AI Studio APIs, and matches each item to similar brands/products in my catalog so shoppers can see comparable deals instantly. The Cloud Run endpoint exposes the experimental API while I finish the UI and ranking heuristics."
       techStack={[
-        { type: "language", name: "Python" },
-        { type: "tool", name: "Gemini (Google AI Studio)" },
-        { type: "tool", name: "Google Cloud Run" },
-        { type: "tool", name: "BeautifulSoup" },
-        { type: "API", name: "REST API" },
-        { type: "skill", name: "LLM Prompt Engineering" },
-        { type: "skill", name: "Structured Output" },
+        { type: "skill", name: "App Building" },
+        { type: "tool", name: "Google AI Studio" },
+        { type: "hosting", name: "Google Cloud Run" },
       ]}
       year="2025"
-      skills="web scraping, LLM prompt engineering, structured output extraction, REST API design, Cloud Run deployment, deal ranking heuristics"
-      impact="REST API deployed on Cloud Run. LLM prompt reliably extracts structured deal fields from unstructured marketing copy across multiple retailers. Ranking engine and UI layer in active development."
+      skills="retail data ingestion, promo normalization, LLM prompt engineering for deal chatter, and lightweight workflow automation"
       image="blackfriday.jpeg"
       githubLink=""
       diagram={`graph LR
-  A["Retailer Promo Pages"] --> B["Web Scraper<br/>Python + BeautifulSoup"]
-  B --> C["Raw Deal Copy<br/>+ HTML metadata"]
-  C --> D["Gemini via AI Studio<br/>Structured output prompt"]
-  D --> E["Normalized Deal Object<br/>name · price · discount% · category"]
-  E --> F["Ranking Engine<br/>discount% + recency score"]
-  F --> G["Cloud Run REST API<br/>/deals endpoint"]
-  G --> H["Client UI<br/>in development"]`}
+  A[Retailer Pages] --> B[Scraper]
+  B --> C[Google AI Studio]
+  C --> D[Deal Normalizer]
+  D --> E[Cloud Run API]
+  E --> F[Client / UI]`}
     />
   )
 }

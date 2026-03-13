@@ -40,10 +40,10 @@ export default function ProjectCard({
   techStack,
   link,
   image,
+  video,
   githubLink,
   problem,
   solution,
-  impact,
   diagram,
   status,
 }: {
@@ -55,10 +55,10 @@ export default function ProjectCard({
   skills?: string
   link?: string
   image?: string
+  video?: string
   githubLink?: string
   problem?: string
   solution?: string
-  impact?: string
   diagram?: string
   status?: "live" | "in progress" | "archived"
 }) {
@@ -156,7 +156,7 @@ export default function ProjectCard({
         {/* LEFT — sticky demo */}
         {(link || image) && (
           <div className="w-full lg:w-[45%] lg:sticky lg:top-10 flex flex-col">
-            <DemoEmbed url={link} fallbackImage={image} />
+            <DemoEmbed url={link} fallbackImage={image} fallbackVideo={video} />
           </div>
         )}
 
@@ -181,25 +181,6 @@ export default function ProjectCard({
               <p className="text-neutral-200 text-sm leading-relaxed">
                 {solution}
               </p>
-            </div>
-          )}
-
-          {diagram && (
-            <div>
-              <p className="text-xs uppercase tracking-widest text-neutral-400 mb-2">
-                Architecture / Flow
-              </p>
-              <MermaidDiagram chart={diagram} />
-            </div>
-          )}
-
-          {/* Impact — always visible */}
-          {impact && (
-            <div>
-              <p className="text-xs uppercase tracking-widest text-neutral-400 mb-2">
-                Impact
-              </p>
-              <p className="text-pink-300 text-sm leading-relaxed">{impact}</p>
             </div>
           )}
 
@@ -243,6 +224,20 @@ export default function ProjectCard({
           )}
         </div>
       </div>
+
+      {/* Full-width diagram at bottom */}
+      {diagram && (
+        <div className="mt-12">
+          <p className="text-xs uppercase tracking-widest text-neutral-400 mb-4 text-center">
+            Architecture / Flow
+          </p>
+          <div className="relative rounded-2xl overflow-hidden border border-pink-500/20 bg-neutral-950/80 p-6">
+            {/* subtle gradient glow behind the diagram */}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-purple-500/5" />
+            <MermaidDiagram chart={diagram} large />
+          </div>
+        </div>
+      )}
     </div>
   )
 }

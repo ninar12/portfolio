@@ -17,13 +17,12 @@ export default function Dbt() {
       year="2024"
       image="cozebot.png"
       skills="cozebot, hackathon, DBT, mindfulness & tech, chatbot development"
-      impact="Functional chatbot deployed to the Coze store — demonstrates RAG-adjacent architecture (PDF knowledge base + conversational prompts) built in a hackathon context."
       githubLink=""
       diagram={`graph LR
-  A["DBT skills are\\nhard to recall daily"] --> B["Source free DBT\\nworkbook PDF"]
-  B --> C["Ingest into Cozebot\\nas knowledge base"]
-  C --> D["Add affirmations\\n+ conversational prompts"]
-  D --> E["Chatbot coaches users\\nthrough DBT skill recall"]`}
+  A[DBT skills hard to recall daily] --> B[Source free DBT workbook PDF]
+  B --> C[Ingest into Cozebot knowledge base]
+  C --> D[Add affirmations + prompts]
+  D --> E[Chatbot coaches DBT skill recall]`}
     />
   )
 }

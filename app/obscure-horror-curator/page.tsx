@@ -16,15 +16,14 @@ export default function ObscureHorrorCurator() {
       ]}
       year="2024"
       skills="genre research, vibe-based recommendation engines, guardrail design for sensitive content, and tooling to keep the horror canon fresh"
-      impact="Publicly available custom GPT on the ChatGPT store — demonstrates knowledge base curation and prompt architecture at scale."
       image="horror-gpt.jpeg"
       githubLink=""
       link="https://chatgpt.com/g/g-68e9a96954f88191b37d29425a037ad7-the-obscure-horror-curator"
       diagram={`graph LR
-  A["Horror fans face\\nchoice paralysis"] --> B["Curate knowledge base\\nof obscure horror films"]
-  B --> C["Design vibe-based\\nprompt system in GPT"]
-  C --> D["Guardrails handle\\nsensitive content edges"]
-  D --> E["Custom GPT recommends\\nfilms by hyper-specific vibe"]`}
+  A[Horror fans face choice paralysis] --> B[Curate obscure horror knowledge base]
+  B --> C[Design vibe-based prompt system]
+  C --> D[Add guardrails for sensitive content]
+  D --> E[GPT recommends by hyper-specific vibe]`}
     />
   )
 }
