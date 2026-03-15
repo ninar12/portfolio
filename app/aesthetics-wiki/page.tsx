@@ -18,7 +18,6 @@ export default function AestheticsWiki() {
       year="2024"
       skills="knowledge graph design, deduplicating crowd-sourced lore, taxonomy building, prompt-ready metadata authoring, and publishing reproducible datasets"
       image="aesthetics-wiki.png"
-      video="aesthetics_wiki.mov"
       githubLink=""
       link="https://huggingface.co/datasets/ninar12/aesthetics-wiki"
       diagram={`graph LR

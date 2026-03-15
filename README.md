@@ -8,8 +8,8 @@ Showcases commission and personal projects spanning AI/ML, web development, and 
 
 ```mermaid
 graph TD
-    layout["app/layout.tsx\n(Root Layout)"]
-    sidebar["Sidebar\n— project nav\n— resume\n— tools + skills"]
+    layout["app/layout.tsx (Root Layout)"]
+    sidebar["Sidebar — project nav — resume — tools + skills"]
     navbar["Navbar"]
     footer["Footer"]
     main["Main Content Area"]
@@ -19,16 +19,16 @@ graph TD
     layout --> main
     layout --> footer
 
-    main --> home["app/page.tsx\nGallery Grid"]
-    main --> project["app/[project]/page.tsx\nProject Page"]
+    main --> home["app/page.tsx Gallery Grid"]
+    main --> project["app/[project]/page.tsx Project Page"]
     main --> about["app/about/page.tsx"]
     main --> contact["app/contact/page.tsx"]
 
-    project --> card["ProjectCard\n(components/Card.tsx)"]
-    home --> piximg["PixelatedImage\n(components/PixelatedImage.tsx)"]
+    project --> card["ProjectCard (components/Card.tsx)"]
+    home --> piximg["PixelatedImage (components/PixelatedImage.tsx)"]
     card --> piximg
 
-    layout --> vercel["Vercel\n(hosting · analytics · speed insights)"]
+    layout --> vercel["Vercel (hosting · analytics · speed insights)"]
 ```
 
 ## Stack

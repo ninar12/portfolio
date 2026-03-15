@@ -16,7 +16,6 @@ export default function Jonathan() {
       year="2024"
       skills="squarespace, website design, user experience, and content creation"
       image="jonathan.png"
-      video="jonfernandez.mov"
       githubLink=""
       diagram={`graph LR
   A[Writer-director needs brand site] --> B[Scope content + navigation]

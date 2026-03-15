@@ -71,7 +71,7 @@ export default function ProjectCard({
       className={
         fullscreen
           ? "fixed inset-0 z-50 bg-neutral-950 overflow-y-auto px-8 py-8"
-          : "max-w-7xl mx-auto text-white py-6 px-2"
+          : "max-w-7xl mx-auto text-white py-6 px-4 sm:px-6"
       }>
       {/* Fullscreen toggle */}
       <div className="flex justify-end mb-2">
@@ -117,7 +117,7 @@ export default function ProjectCard({
       {/* Title */}
       <div className="mb-10 text-center">
         <div className="flex items-center justify-center gap-3 mb-2">
-          <h3 className="text-3xl font-bold">{title}</h3>
+          <h1 className="text-4xl text-pink-200">{title}</h1>
           {statusConfig && (
             <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-neutral-800 border border-neutral-700 text-xs text-neutral-300 shrink-0">
               <span
@@ -134,7 +134,7 @@ export default function ProjectCard({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 text-sm hover:underline">
+              className="text-pink-400 text-sm hover:underline">
               Project Link ↗
             </a>
           )}
@@ -143,7 +143,7 @@ export default function ProjectCard({
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 text-sm hover:underline">
+              className="text-pink-400 text-sm hover:underline">
               Github ↗
             </a>
           )}
@@ -152,7 +152,7 @@ export default function ProjectCard({
       </div>
 
       {/* Two-column body */}
-      <div className="flex flex-col lg:flex-row gap-12 items-stretch">
+      <div className="flex flex-col lg:flex-row gap-8 items-stretch">
         {/* LEFT — sticky demo */}
         {(link || image) && (
           <div className="w-full lg:w-[45%] lg:sticky lg:top-10 flex flex-col">
@@ -231,7 +231,7 @@ export default function ProjectCard({
           <p className="text-xs uppercase tracking-widest text-neutral-400 mb-4 text-center">
             Architecture / Flow
           </p>
-          <div className="relative rounded-2xl overflow-hidden border border-pink-500/20 bg-neutral-950/80 p-6">
+          <div className="relative rounded-2xl overflow-hidden border border-pink-500/30 bg-neutral-950/80 p-6">
             {/* subtle gradient glow behind the diagram */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-purple-500/5" />
             <MermaidDiagram chart={diagram} large />

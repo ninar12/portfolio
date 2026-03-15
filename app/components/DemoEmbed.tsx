@@ -9,8 +9,9 @@ const BLOCKED_DOMAINS = [
   "coze.com",
   "arccapitalpartners.com",
   "bccentralamerica.com",
-  "hilarymacgregor.com",
   "jonathan-fernandez.com",
+  "hilarymacgregor.com",
+  "eastsidetherapycollective.com",
 ]
 
 function isBlocked(url?: string): boolean {
@@ -44,7 +45,7 @@ export default function DemoEmbed({
         <div className="w-3 h-3 rounded-full bg-green-500/80" />
       </div>
       <div className="flex-1 bg-neutral-900 rounded-md px-3 py-1 text-xs text-neutral-400 truncate min-w-0">
-        {url}
+        {(() => { try { return new URL(url).hostname } catch { return url } })()}
       </div>
       <a
         href={url}
@@ -112,10 +113,11 @@ export default function DemoEmbed({
       {!url || failed ? (
         mediaFallback
       ) : (
-        <div className="relative bg-neutral-950 flex-1 min-h-[400px]">
+        <div className="relative bg-neutral-950 flex-1 min-h-[400px] overflow-hidden">
           <iframe
             src={url}
-            className="absolute inset-0 w-full h-full"
+            style={{ zoom: 0.5 }}
+            className="absolute inset-0 w-[200%] h-[200%]"
             onError={() => setFailed(true)}
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
           />
