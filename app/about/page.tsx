@@ -73,6 +73,39 @@ export default function About() {
           </ul>
         </div>
 
+        {/* What I Can Build */}
+        <div className="space-y-4">
+          <h3 className="text-pink-300 font-semibold text-sm">
+            WHAT I CAN BUILD FOR YOU
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-neutral-900/50 p-6 rounded-xl border border-pink-500/20 hover:border-pink-500/40 transition-all">
+              <h4 className="text-base font-semibold text-pink-200 mb-2">AI Chatbots</h4>
+              <p className="text-neutral-400 text-sm leading-relaxed">
+                Custom chatbots trained on your content — customer support bots, internal knowledge assistants, onboarding tools. Built with guardrails, tone control, and real retrieval (not just generic GPT).
+              </p>
+            </div>
+            <div className="bg-neutral-900/50 p-6 rounded-xl border border-pink-500/20 hover:border-pink-500/40 transition-all">
+              <h4 className="text-base font-semibold text-pink-200 mb-2">Workflow Automation with AI</h4>
+              <p className="text-neutral-400 text-sm leading-relaxed">
+                Replace repetitive manual work with AI pipelines — auto-tagging, content generation, data extraction, report drafting, and more. I design automations that fit how your team actually works.
+              </p>
+            </div>
+            <div className="bg-neutral-900/50 p-6 rounded-xl border border-pink-500/20 hover:border-pink-500/40 transition-all">
+              <h4 className="text-base font-semibold text-pink-200 mb-2">AI-Powered Web Apps</h4>
+              <p className="text-neutral-400 text-sm leading-relaxed">
+                Full-stack products with AI baked in — search, recommendations, generation, or classification features embedded directly into the user experience.
+              </p>
+            </div>
+            <div className="bg-neutral-900/50 p-6 rounded-xl border border-pink-500/20 hover:border-pink-500/40 transition-all">
+              <h4 className="text-base font-semibold text-pink-200 mb-2">LLM Integration & RAG Systems</h4>
+              <p className="text-neutral-400 text-sm leading-relaxed">
+                Connect your existing data and tools to large language models. I architect retrieval-augmented systems that ground AI responses in your actual documents, databases, and workflows.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Services */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-neutral-900/30 p-6 rounded-xl border border-pink-500/10 hover:border-pink-500/30 transition-all">
@@ -110,34 +143,24 @@ export default function About() {
         {/* Call to Action */}
         <div className="text-center space-y-6 bg-neutral-900/50 backdrop-blur-sm p-10 rounded-2xl border border-pink-500/20">
           <h2 className="text-2xl font-bold text-pink-200">
-            Ready to build something?
+            Let's build something for your business.
           </h2>
           <p className="text-neutral-300 max-w-xl mx-auto">
-            Whether you need a site built from scratch, an AI feature added to
-            an existing product, or just want to talk through what's possible —
-            reach out.
+            30 minutes, no pitch. Tell me what you're working on and I'll tell you exactly what I'd build — and whether it's worth it.
           </p>
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center px-8 py-3 bg-pink-500 text-white font-semibold rounded-lg hover:bg-pink-600 transition-colors text-base">
-              Get in Touch
+              className="inline-flex items-center justify-center px-8 py-3 bg-pink-500 text-white font-semibold rounded-lg hover:bg-pink-600 transition-colors text-base">
+              Book a free 30-min call
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center px-8 py-3 border border-pink-500/40 text-pink-300 font-semibold rounded-lg hover:border-pink-500 hover:text-pink-200 transition-all text-base">
+              See what I build →
             </Link>
           </div>
         </div>
-
-        {/* Background Animation */}
-        <style jsx global>{`
-          @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-          .animate-gradient {
-            background-size: 200% auto;
-            animation: gradient 4s linear infinite;
-          }
-        `}</style>
       </div>
     </div>
   )

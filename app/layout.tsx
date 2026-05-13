@@ -20,11 +20,13 @@ const aiml = [
   { name: "STABLE DIFFUSION GENERATOR", link: "/stable" },
   { name: "AESTHETICS WIKI DATASET", link: "/aesthetics-wiki" },
   { name: "OBSCURE HORROR CURATOR", link: "/obscure-horror-curator" },
+  { name: "OBSCURE HORROR CURATOR 2.0", link: "/horror-recs" },
   { name: "DBT CHATBOT", link: "/dbt-chatbot" },
 ]
 
 const product = [
   { name: "THE PEOPLE'S PRINCESS", link: "/the-peoples-princess" },
+  { name: "MYPLANTRY", link: "/myplantry" },
 ]
 
 const consulting = [
@@ -199,7 +201,9 @@ export default function RootLayout({
             </aside>
 
             {/* Main Content */}
-            <main className="flex-1 px-6 py-6 md:px-10 md:py-8">{children}</main>
+            <main className="flex-1 px-6 py-6 md:px-10 md:py-8">
+              {children}
+            </main>
           </div>
 
           <Footer />

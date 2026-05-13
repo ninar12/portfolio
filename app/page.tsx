@@ -7,42 +7,172 @@ type Category = "ALL" | "AI + ML" | "PRODUCT" | "CONSULTING" | "EXPERIMENTS"
 
 const galleryItems = [
   // AI + ML
-  { href: "/black-friday-ai-deal-hunter", src: "/blackfriday.jpeg",         alt: "Black Friday AI Deal Hunter",   label: "Black Friday AI Deal Hunter",   category: "AI + ML" },
-  { href: "/lora",                         src: "/lora.png",                  alt: "Black Male Hair Style Lora",    label: "Black Male Hair Style Lora",    category: "AI + ML" },
-  { href: "/stable",                       src: "/stablediffusion.png",       alt: "Stable Diffusion Recipe",       label: "Stable Diffusion Recipe",       category: "AI + ML" },
-  { href: "/aesthetics-wiki",              src: "/aesthetics-wiki.png",       alt: "Aesthetics Wiki Dataset",       label: "Aesthetics Wiki Dataset",       category: "AI + ML" },
-  { href: "/obscure-horror-curator",       src: "/horror-gpt.jpeg",           alt: "Obscure Horror Curator",        label: "Obscure Horror Curator",        category: "AI + ML" },
-  { href: "/dbt-chatbot",                  src: "/cozebot.png",               alt: "DBT Chatbot",                   label: "DBT Chatbot",                   category: "AI + ML" },
+  {
+    href: "/black-friday-ai-deal-hunter",
+    src: "/blackfriday.jpeg",
+    alt: "Black Friday AI Deal Hunter",
+    label: "Black Friday AI Deal Hunter",
+    category: "AI + ML",
+  },
+  {
+    href: "/lora",
+    src: "/lora.png",
+    alt: "Black Male Hair Style Lora",
+    label: "Black Male Hair Style Lora",
+    category: "AI + ML",
+  },
+  {
+    href: "/stable",
+    src: "/stablediffusion.png",
+    alt: "Stable Diffusion Recipe",
+    label: "Stable Diffusion Recipe",
+    category: "AI + ML",
+  },
+  {
+    href: "/aesthetics-wiki",
+    src: "/aesthetics-wiki.png",
+    alt: "Aesthetics Wiki Dataset",
+    label: "Aesthetics Wiki Dataset",
+    category: "AI + ML",
+  },
+  {
+    href: "/obscure-horror-curator",
+    src: "/horror-gpt.jpeg",
+    alt: "Obscure Horror Curator",
+    label: "Obscure Horror Curator",
+    category: "AI + ML",
+  },
+  {
+    href: "/horror-recs",
+    src: "/horror-recs.png",
+    alt: "Obscure Horror Curator 2.0",
+    label: "Obscure Horror Curator 2.0",
+    category: "AI + ML",
+  },
+  {
+    href: "/dbt-chatbot",
+    src: "/cozebot.png",
+    alt: "DBT Chatbot",
+    label: "DBT Chatbot",
+    category: "AI + ML",
+  },
   // Product
-  { href: "/the-peoples-princess",         src: "/peoples-princess.png",      alt: "The People's Princess",         label: "The People's Princess",         category: "PRODUCT" },
+  {
+    href: "/the-peoples-princess",
+    src: "/peoples-princess.png",
+    alt: "The People's Princess",
+    label: "The People's Princess",
+    category: "PRODUCT",
+  },
+  {
+    href: "/myplantry",
+    src: "/myplantry.png",
+    alt: "Plantry",
+    label: "Plantry",
+    category: "PRODUCT",
+  },
   // Consulting
-  { href: "/arc-capital-partners",         src: "/arccapitalpartners.png",    alt: "Arc Capital Partners",          label: "Arc Capital Partners",          category: "CONSULTING" },
-  { href: "/bc",                           src: "/bc.png",                    alt: "BC Central America",            label: "BC Central America",            category: "CONSULTING" },
-  { href: "/eastside-therapy-collective",  src: "/muses-etc.png",             alt: "Eastside Therapy Collective",   label: "Eastside Therapy Collective",   category: "CONSULTING" },
-  { href: "/hilary",                       src: "/hilary.png",                alt: "Hilary",                        label: "Hilary",                        category: "CONSULTING" },
-  { href: "/jonathan",                     src: "/jonathan.png",              alt: "Jonathan",                      label: "Jonathan",                      category: "CONSULTING" },
+  {
+    href: "/arc-capital-partners",
+    src: "/arccapitalpartners.png",
+    alt: "Arc Capital Partners",
+    label: "Arc Capital Partners",
+    category: "CONSULTING",
+  },
+  {
+    href: "/bc",
+    src: "/bc.png",
+    alt: "BC Central America",
+    label: "BC Central America",
+    category: "CONSULTING",
+  },
+  {
+    href: "/eastside-therapy-collective",
+    src: "/muses-etc.png",
+    alt: "Eastside Therapy Collective",
+    label: "Eastside Therapy Collective",
+    category: "CONSULTING",
+  },
+  {
+    href: "/hilary",
+    src: "/hilary.png",
+    alt: "Hilary",
+    label: "Hilary",
+    category: "CONSULTING",
+  },
+  {
+    href: "/jonathan",
+    src: "/jonathan.png",
+    alt: "Jonathan",
+    label: "Jonathan",
+    category: "CONSULTING",
+  },
   // Experiments
-  { href: "/in-out",                       src: "/inout.png",                 alt: "In & Out",                      label: "In & Out",                      category: "EXPERIMENTS" },
-  { href: "/pomodoro",                     src: "/pomodoro.png",              alt: "Pomodoro",                      label: "Pomodoro",                      category: "EXPERIMENTS" },
+  {
+    href: "/in-out",
+    src: "/inout.png",
+    alt: "In & Out",
+    label: "In & Out",
+    category: "EXPERIMENTS",
+  },
+  {
+    href: "/pomodoro",
+    src: "/pomodoro.png",
+    alt: "Pomodoro",
+    label: "Pomodoro",
+    category: "EXPERIMENTS",
+  },
 ] as const
 
-const categories: Category[] = ["ALL", "AI + ML", "PRODUCT", "CONSULTING", "EXPERIMENTS"]
+const categories: Category[] = [
+  "ALL",
+  "AI + ML",
+  "PRODUCT",
+  "CONSULTING",
+  "EXPERIMENTS",
+]
 
 export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState<Category>("ALL")
 
   const filtered = galleryItems.filter(
-    (item) => activeFilter === "ALL" || item.category === activeFilter
+    (item) => activeFilter === "ALL" || item.category === activeFilter,
   )
 
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Hero Section */}
-        <div className="text-center space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-500 via-fuschia-500 to-pink-200 text-transparent bg-clip-text animate-gradient">
-            WORK GALLERY
+        <div className="text-center space-y-6 py-8">
+          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+            I build websites and{" "}
+            <span className="bg-gradient-to-r from-pink-500 via-fuchsia-400 to-pink-200 text-transparent bg-clip-text animate-gradient">
+              AI products
+            </span>
+            <br />
+            for small businesses.
           </h1>
+          <p className="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            I build practical websites and AI tools for small businesses that
+            need systems they can actually use day to day. My work is focused on
+            retail, bringing the kind of automation and customer experience
+            larger brands use into setups that make sense for growing teams and
+            real budgets.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center px-8 py-3 border border-pink-500/40 text-pink-300 font-semibold rounded-lg hover:border-pink-500 hover:text-pink-200 transition-all text-base">
+              See what I build →
+            </Link>
+          </div>
+        </div>
+
+        {/* Gallery Label */}
+        <div className="text-center">
+          <h2 className="text-xl font-bold bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-200 text-transparent bg-clip-text animate-gradient">
+            WORK GALLERY
+          </h2>
         </div>
 
         {/* Filter Buttons */}
@@ -80,19 +210,6 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
-
-        {/* Background Animation */}
-        <style jsx global>{`
-          @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-          .animate-gradient {
-            background-size: 200% auto;
-            animation: gradient 4s linear infinite;
-          }
-        `}</style>
       </div>
     </div>
   )
