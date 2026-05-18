@@ -3,35 +3,35 @@ import Link from "next/link"
 
 const services = [
   {
-    title: "Custom Website",
+    title: "Custom Brand Website",
     tag: "WEBSITES",
     description:
-      "A fast, modern site built to actually convert — not a template. I design and build from scratch with Next.js: landing pages, portfolios, business sites, booking flows.",
-    details: ["Custom design, no templates", "Mobile-first and fast", "Deployed and ready to go"],
+      "A fast, tailored site built to convert, clarify your offer, and make your business look more established. Not a template and not a bloated agency process.",
+    details: ["Custom design and build", "Mobile-first, fast, and production-ready", "Landing pages, portfolios, business sites, and booking flows"],
   },
   {
-    title: "AI Chatbot",
-    tag: "AI PRODUCTS",
+    title: "AI Assistant or Chatbot",
+    tag: "AI SYSTEMS",
     description:
-      "A chatbot trained on your content — not generic GPT. Customer support, product Q&A, onboarding, lead capture. Knows your business, speaks in your tone, stays on-topic.",
-    details: ["Trained on your docs, site, and FAQs", "Guardrails and tone control built in", "Embeds directly in your website"],
+      "A business-specific assistant trained on your content, not a generic GPT wrapper. Useful for support, onboarding, product education, lead capture, or internal knowledge access.",
+    details: ["Grounded in your docs, site, and FAQs", "Tone control and guardrails built in", "Can live on your site or inside an internal workflow"],
   },
   {
-    title: "Small Business Automation",
+    title: "Internal Tools and Automation",
     tag: "AUTOMATION",
     description:
-      "Replace the manual work that slows your team down. Auto-tagging, report generation, email drafts, data extraction — I build AI pipelines that fit how you actually work.",
-    details: ["Cuts hours of manual work per week", "Connects to your existing tools", "No engineering team required to maintain"],
+      "I build AI-assisted workflows that remove repetitive work, reduce operational drag, and give small teams better systems without needing an internal engineering org.",
+    details: ["Reporting, tagging, extraction, drafting, and workflow support", "Fits into the tools your team already uses", "Designed to be practical to maintain"],
   },
   {
-    title: "Recommendation System",
+    title: "Retail AI and Product Discovery",
     tag: "RETAIL AI",
     description:
-      "The same personalization tech that drives revenue for major retail brands — built for your store. I architect recommendation and product discovery systems grounded in your catalog and customer behavior.",
+      "Recommendation systems, smarter search, and product discovery flows shaped by real retail experience. This is where I bring enterprise retail thinking into smaller, sharper implementations.",
     details: [
-      "Built the same systems at GUESS Inc.",
-      "Product recommendations, upsells, cross-sells",
-      "Works with Shopify, WooCommerce, or custom",
+      "Built on experience from GUESS Inc.",
+      "Recommendations, upsells, cross-sells, and discovery UX",
+      "Can work with Shopify, WooCommerce, or custom stacks",
     ],
   },
 ]
@@ -44,14 +44,15 @@ export default function ServicesPage() {
         {/* Header */}
         <div className="space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-            What I build for{" "}
+            Custom systems for{" "}
             <span className="bg-gradient-to-r from-pink-500 via-fuchsia-400 to-pink-200 text-transparent bg-clip-text">
-              small businesses.
+              growing brands.
             </span>
           </h1>
           <p className="text-neutral-400 text-lg max-w-2xl leading-relaxed">
-            The tools enterprise teams use — scoped and priced for growing businesses.
-            Especially retail: I architect AI systems at the same level used by brands like GUESS.
+            I design and build websites, AI products, and internal tools for
+            businesses that want sharper execution without hiring a full
+            product or engineering team.
           </p>
         </div>
 
@@ -90,8 +91,8 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { step: "01", title: "Free 30-min call", desc: "Tell me what you're trying to solve. I'll tell you what I'd build and whether it's worth it." },
-              { step: "02", title: "Scoped proposal", desc: "You get a clear scope, timeline, and fixed price. No surprises, no hourly billing." },
-              { step: "03", title: "Built & deployed", desc: "I build it, you review it, I ship it. You own everything." },
+              { step: "02", title: "Scoped proposal", desc: "You get a clear recommendation, project scope, timeline, and fixed price. No vague retainers." },
+              { step: "03", title: "Built & shipped", desc: "I design, build, and deploy the work with you. You get something usable, not just a deck or prototype." },
             ].map((item) => (
               <div key={item.step} className="space-y-2">
                 <span className="text-pink-500 font-bold text-2xl">{item.step}</span>
@@ -105,15 +106,17 @@ export default function ServicesPage() {
         {/* CTA */}
         <div className="text-center space-y-6 bg-neutral-900/50 backdrop-blur-sm p-10 rounded-2xl border border-pink-500/20">
           <h2 className="text-2xl font-bold text-pink-200">
-            Not sure what you need?
+            Need clarity before you invest?
           </h2>
           <p className="text-neutral-300 max-w-xl mx-auto">
-            That's what the free call is for. 30 minutes, no pitch — just an honest conversation about your business and what's actually possible.
+            Tell me what you are trying to build, fix, or automate. I will tell
+            you what I would recommend, what I would not recommend, and what is
+            worth doing first.
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center justify-center px-8 py-3 bg-pink-500 text-white font-semibold rounded-lg hover:bg-pink-600 transition-colors text-base">
-            Book a free 30-min call
+            Start a project conversation
           </Link>
         </div>
       </div>

@@ -145,25 +145,23 @@ export default function HomePage() {
         {/* Hero Section */}
         <div className="text-center space-y-6 py-8">
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-            I build websites and{" "}
+            I build custom websites and{" "}
             <span className="bg-gradient-to-r from-pink-500 via-fuchsia-400 to-pink-200 text-transparent bg-clip-text animate-gradient">
               AI products
             </span>
             <br />
-            for small businesses.
+            for modern brands.
           </h1>
           <p className="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            I build practical websites and AI tools for small businesses that
-            need systems they can actually use day to day. My work is focused on
-            retail, bringing the kind of automation and customer experience
-            larger brands use into setups that make sense for growing teams and
-            real budgets.
+            I help growing businesses design and ship polished digital products,
+            from conversion-focused websites to AI tools that automate work,
+            improve customer experience, and create real operational leverage.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
             <Link
               href="/services"
               className="inline-flex items-center justify-center px-8 py-3 border border-pink-500/40 text-pink-300 font-semibold rounded-lg hover:border-pink-500 hover:text-pink-200 transition-all text-base">
-              See what I build →
+              Explore services →
             </Link>
           </div>
         </div>

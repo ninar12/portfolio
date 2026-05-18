@@ -15,20 +15,11 @@ import { StyleConveyorBelt } from "./components/StyleConveyerBelt"
 const cx = (...classes: any) => classes.filter(Boolean).join(" ")
 
 const aiml = [
+  { name: "MYPLANTRY", link: "/myplantry" },
+  { name: "NICHE HORROR RECS", link: "/horror-recs" },
   { name: "BLACK FRIDAY AI DEAL HUNTER", link: "/black-friday-ai-deal-hunter" },
   { name: "BLACK HAIRSTYLE LORA", link: "/lora" },
-  { name: "STABLE DIFFUSION GENERATOR", link: "/stable" },
-  { name: "AESTHETICS WIKI DATASET", link: "/aesthetics-wiki" },
-  { name: "OBSCURE HORROR CURATOR", link: "/obscure-horror-curator" },
-  { name: "OBSCURE HORROR CURATOR 2.0", link: "/horror-recs" },
-  { name: "DBT CHATBOT", link: "/dbt-chatbot" },
 ]
-
-const product = [
-  { name: "THE PEOPLE'S PRINCESS", link: "/the-peoples-princess" },
-  { name: "MYPLANTRY", link: "/myplantry" },
-]
-
 const consulting = [
   { name: "ARC CAPITAL PARTNERS", link: "/arc-capital-partners" },
   { name: "BC GROUP", link: "/bc" },
@@ -40,6 +31,10 @@ const consulting = [
 const experiments = [
   { name: "IN & OUT GENERATOR", link: "/in-out" },
   { name: "POMODORO TIMER", link: "/pomodoro" },
+  { name: "STABLE DIFFUSION GENERATOR", link: "/stable" },
+  { name: "AESTHETICS WIKI DATASET", link: "/aesthetics-wiki" },
+  { name: "DBT CHATBOT", link: "/dbt-chatbot" },
+  { name: "THE PEOPLE'S PRINCESS", link: "/the-peoples-princess" },
 ]
 
 export default function RootLayout({
@@ -117,23 +112,6 @@ export default function RootLayout({
                   </h2>
                   <div className="space-y-2">
                     {aiml.map((item, index) => (
-                      <Link
-                        key={index}
-                        href={item.link}
-                        className="block text-sm text-neutral-400 hover:text-pink-400 transition-colors">
-                        _{item.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Product */}
-                <div className="mb-8">
-                  <h2 className="text-sm font-semibold text-pink-300 mb-2">
-                    PRODUCT
-                  </h2>
-                  <div className="space-y-2">
-                    {product.map((item, index) => (
                       <Link
                         key={index}
                         href={item.link}

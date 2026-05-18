@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { ReactNode, useState } from "react"
 import MermaidDiagram from "./MermaidDiagram"
 import DemoEmbed from "./DemoEmbed"
 
@@ -46,6 +46,7 @@ export default function ProjectCard({
   solution,
   diagram,
   status,
+  children,
 }: {
   title: string
   year?: string
@@ -61,6 +62,7 @@ export default function ProjectCard({
   solution?: string
   diagram?: string
   status?: "live" | "in progress" | "archived"
+  children?: ReactNode
 }) {
   const [descOpen, setDescOpen] = useState(false)
   const [fullscreen, setFullscreen] = useState(false)
@@ -224,6 +226,8 @@ export default function ProjectCard({
           )}
         </div>
       </div>
+
+      {children && <div className="mt-12">{children}</div>}
 
       {/* Full-width diagram at bottom */}
       {diagram && (

@@ -27,7 +27,8 @@ export default function About() {
             Enterprise AI Solutions Architect
           </h2>
           <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-            From enterprise LLM integrations to full-stack products — I build what actually ships.
+            I build custom AI products, internal tools, and websites that are
+            meant to ship and be used.
           </p>
         </div>
 
@@ -39,12 +40,14 @@ export default function About() {
             <span className="text-pink-400 font-semibold">
               Computation & Cognition
             </span>{" "}
-            (CS + Neuroscience) and currently an AI Solutions Architect at GUESS
-            Inc. I've shipped client websites, trained machine learning models,
-            built full stack web apps, and integrated AI into real workflows. I
-            take projects from idea to deployed product. At GUESS Inc., I
-            architect AI integrations across enterprise retail workflows —
-            bridging the gap between model capabilities and business team needs.
+            (CS + Neuroscience) and currently an AI Solutions Architect at
+            GUESS Inc. My work sits between product thinking, design, and
+            implementation. I have shipped client websites, built full-stack
+            web apps, trained models, and integrated AI into real business
+            workflows. At GUESS, I architect AI systems across enterprise
+            retail workflows, translating model capability into tools teams can
+            actually use. For clients, that means I can take a project from
+            rough idea to working product without losing the business context.
           </p>
         </div>
 
@@ -143,21 +146,23 @@ export default function About() {
         {/* Call to Action */}
         <div className="text-center space-y-6 bg-neutral-900/50 backdrop-blur-sm p-10 rounded-2xl border border-pink-500/20">
           <h2 className="text-2xl font-bold text-pink-200">
-            Let's build something for your business.
+            Let&apos;s figure out what is worth building.
           </h2>
           <p className="text-neutral-300 max-w-xl mx-auto">
-            30 minutes, no pitch. Tell me what you're working on and I'll tell you exactly what I'd build — and whether it's worth it.
+            Tell me what you are working on and I will tell you what I would
+            build, where AI is actually useful, and what would create the most
+            leverage for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-3 bg-pink-500 text-white font-semibold rounded-lg hover:bg-pink-600 transition-colors text-base">
-              Book a free 30-min call
+              Start a project conversation
             </Link>
             <Link
               href="/services"
               className="inline-flex items-center justify-center px-8 py-3 border border-pink-500/40 text-pink-300 font-semibold rounded-lg hover:border-pink-500 hover:text-pink-200 transition-all text-base">
-              See what I build →
+              Explore services →
             </Link>
           </div>
         </div>
