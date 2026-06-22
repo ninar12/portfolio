@@ -7,13 +7,13 @@ type Category = "ALL" | "AI + ML" | "PRODUCT" | "CONSULTING" | "EXPERIMENTS"
 
 const galleryItems = [
   // AI + ML
-  {
-    href: "/black-friday-ai-deal-hunter",
-    src: "/blackfriday.jpeg",
-    alt: "Black Friday AI Deal Hunter",
-    label: "Black Friday AI Deal Hunter",
-    category: "AI + ML",
-  },
+  // {
+  //   href: "/black-friday-ai-deal-hunter",
+  //   src: "/blackfriday.jpeg",
+  //   alt: "Black Friday AI Deal Hunter",
+  //   label: "Black Friday AI Deal Hunter",
+  //   category: "AI + ML",
+  // },
   {
     href: "/lora",
     src: "/lora.png",
