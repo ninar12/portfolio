@@ -6,7 +6,7 @@ export default function BlackFridayAIDealHunter() {
       title="Black Friday AI Deal Hunter"
       subtitle="LLM-powered retail data pipeline on Google Cloud Run"
       status="in progress"
-      link="https://black-friday-ai-deal-hunter-820272415386.us-west1.run.app/"
+      link=""
       problem="Retail promo data is scattered across hundreds of retailer pages with inconsistent formats, making real-time price comparison nearly impossible without manual effort."
       solution="A Cloud Run API that scrapes retailer promotions, passes the copy and metadata through Google AI Studio to normalize and rank deals, and matches items to comparable products so shoppers see the best price instantly."
       description="This in-progress Black Friday scout scrapes retailer promos, pushes the copy + metadata through Google AI Studio APIs, and matches each item to similar brands/products in my catalog so shoppers can see comparable deals instantly. The Cloud Run endpoint exposes the experimental API while I finish the UI and ranking heuristics."

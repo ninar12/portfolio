@@ -17,7 +17,7 @@ const cx = (...classes: any) => classes.filter(Boolean).join(" ")
 const aiml = [
   { name: "MYPLANTRY", link: "/myplantry" },
   { name: "NICHE HORROR RECS", link: "/horror-recs" },
-  // { name: "BLACK FRIDAY AI DEAL HUNTER", link: "/black-friday-ai-deal-hunter" },
+  { name: "BLACK FRIDAY AI DEAL HUNTER", link: "/black-friday-ai-deal-hunter" },
   { name: "BLACK HAIRSTYLE LORA", link: "/lora" },
 ]
 const consulting = [

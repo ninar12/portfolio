@@ -1,19 +1,21 @@
 "use client"
 import React, { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import PixelatedImage from "./components/PixelatedImage"
+import { StyleConveyorBelt } from "./components/StyleConveyerBelt"
 
 type Category = "ALL" | "AI + ML" | "PRODUCT" | "CONSULTING" | "EXPERIMENTS"
 
 const galleryItems = [
   // AI + ML
-  // {
-  //   href: "/black-friday-ai-deal-hunter",
-  //   src: "/blackfriday.jpeg",
-  //   alt: "Black Friday AI Deal Hunter",
-  //   label: "Black Friday AI Deal Hunter",
-  //   category: "AI + ML",
-  // },
+  {
+    href: "/black-friday-ai-deal-hunter",
+    src: "/blackfriday.jpeg",
+    alt: "Black Friday AI Deal Hunter",
+    label: "Black Friday AI Deal Hunter",
+    category: "AI + ML",
+  },
   {
     href: "/lora",
     src: "/lora.png",
@@ -57,13 +59,13 @@ const galleryItems = [
     category: "AI + ML",
   },
   // Product
-  {
-    href: "/the-peoples-princess",
-    src: "/peoples-princess.png",
-    alt: "The People's Princess",
-    label: "The People's Princess",
-    category: "PRODUCT",
-  },
+  // {
+  //   href: "/the-peoples-princess",
+  //   src: "/peoples-princess.png",
+  //   alt: "The People's Princess",
+  //   label: "The People's Princess",
+  //   category: "PRODUCT",
+  // },
   {
     href: "/myplantry",
     src: "/myplantry.png",
@@ -115,13 +117,13 @@ const galleryItems = [
     label: "In & Out",
     category: "EXPERIMENTS",
   },
-  {
-    href: "/pomodoro",
-    src: "/pomodoro.png",
-    alt: "Pomodoro",
-    label: "Pomodoro",
-    category: "EXPERIMENTS",
-  },
+  // {
+  //   href: "/pomodoro",
+  //   src: "/pomodoro.png",
+  //   alt: "Pomodoro",
+  //   label: "Pomodoro",
+  //   category: "EXPERIMENTS",
+  // },
 ] as const
 
 const categories: Category[] = [
@@ -133,7 +135,7 @@ const categories: Category[] = [
 ]
 
 export default function HomePage() {
-  const [activeFilter, setActiveFilter] = useState<Category>("ALL")
+  const [activeFilter, setActiveFilter] = useState<Category>("AI + ML")
 
   const filtered = galleryItems.filter(
     (item) => activeFilter === "ALL" || item.category === activeFilter,
@@ -142,8 +144,29 @@ export default function HomePage() {
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto space-y-8">
+
+        {/* Open To Banner */}
+        <div className="flex justify-center">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-300 text-xs font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
+            Open to: Staff AI Engineer + Principal Architect roles
+          </span>
+        </div>
+
         {/* Hero Section */}
-        <div className="text-center space-y-6 py-8">
+        <div className="text-center space-y-6 py-4">
+          <div className="flex justify-center">
+            <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-pink-500/40 shadow-lg shadow-pink-500/10">
+              <Image
+                src="/portfolio_.png"
+                alt="Nina Rhone"
+                width={80}
+                height={80}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
             I build custom websites and{" "}
             <span className="bg-gradient-to-r from-pink-500 via-fuchsia-400 to-pink-200 text-transparent bg-clip-text animate-gradient">
@@ -152,22 +175,82 @@ export default function HomePage() {
             <br />
             for modern brands.
           </h1>
-          <p className="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            I help growing businesses design and ship polished digital products,
-            from conversion-focused websites to AI tools that automate work,
-            improve customer experience, and create real operational leverage.
+
+          <p className="text-neutral-300 text-base max-w-2xl mx-auto leading-relaxed">
+            I&apos;m Nina Rhone — MIT grad in Computation & Cognition and AI
+            Solutions Architect at GUESS Inc., where I architect AI systems
+            across enterprise retail workflows. I ship full-stack products,
+            train models, and integrate AI into tools that create real business
+            leverage.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
-            <Link
-              href="/services"
+            <a
+              href="#gallery"
+              className="inline-flex items-center justify-center px-8 py-3 bg-pink-500 hover:bg-pink-600 text-white font-semibold rounded-lg transition-colors text-base">
+              View My AI Work
+            </a>
+            <a
+              href="https://calendly.com/ninajr11/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-3 border border-pink-500/40 text-pink-300 font-semibold rounded-lg hover:border-pink-500 hover:text-pink-200 transition-all text-base">
-              Explore services →
+              Book a Call →
+            </a>
+          </div>
+        </div>
+
+        {/* GUESS AI Stylist — Featured Hero Card */}
+        <div className="relative overflow-hidden rounded-2xl border border-pink-500/30 bg-gradient-to-br from-neutral-900 via-neutral-900/95 to-pink-950/20 p-8 shadow-lg shadow-pink-500/5">
+          <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-fuchsia-500/5 pointer-events-none" />
+          <div className="relative space-y-4">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-[10px] uppercase tracking-widest text-pink-400 font-semibold border border-pink-500/30 px-2 py-0.5 rounded">
+                Featured Enterprise Project
+              </span>
+              <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-neutral-800 border border-neutral-700 text-xs text-neutral-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                Live
+              </span>
+            </div>
+
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              GUESS AI Stylist
+            </h2>
+
+            <p className="text-neutral-400 text-sm leading-relaxed max-w-2xl">
+              An AI-powered styling assistant built for GUESS&apos;s enterprise
+              retail platform. Uses LLMs and product catalog embeddings to
+              deliver personalized outfit recommendations, reducing manual
+              curation time and improving conversion at scale.
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              {[
+                { label: "LLMs", cls: "bg-fuchsia-300 border-fuchsia-400" },
+                { label: "RAG", cls: "bg-purple-300 border-purple-400" },
+                { label: "Next.js", cls: "bg-pink-400 border-pink-500" },
+                { label: "Vector Search", cls: "bg-purple-500 border-purple-600" },
+                { label: "Enterprise Retail", cls: "bg-pink-500 border-pink-600" },
+              ].map((chip) => (
+                <span
+                  key={chip.label}
+                  className={`${chip.cls} border text-gray-800 text-xs font-medium px-2 py-1 rounded-lg`}>
+                  {chip.label}
+                </span>
+              ))}
+            </div>
+
+            <Link
+              href="/guess-ai-stylist"
+              className="inline-flex items-center gap-1 text-pink-400 hover:text-pink-300 text-sm font-medium transition-colors">
+              View Case Study →
             </Link>
           </div>
         </div>
 
         {/* Gallery Label */}
-        <div className="text-center">
+        <div className="text-center" id="gallery">
           <h2 className="text-xl font-bold bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-200 text-transparent bg-clip-text animate-gradient">
             WORK GALLERY
           </h2>
@@ -208,6 +291,17 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
+
+        {/* Skills Section */}
+        <div className="space-y-4 pt-4 border-t border-pink-500/10">
+          <div className="text-center">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-200 text-transparent bg-clip-text animate-gradient">
+              TOOLS + SKILLS
+            </h2>
+          </div>
+          <StyleConveyorBelt />
+        </div>
+
       </div>
     </div>
   )

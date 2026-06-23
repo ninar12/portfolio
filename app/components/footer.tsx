@@ -34,7 +34,7 @@ const Footer = () => {
           </a>
         </div>
         <p className="text-center text-neutral-400 text-sm">
-          © 2025 NJR Solutions
+          © 2026 NJR Solutions
         </p>
       </div>
     </footer>
