@@ -200,55 +200,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* GUESS AI Stylist — Featured Hero Card */}
-        <div className="relative overflow-hidden rounded-2xl border border-pink-500/30 bg-gradient-to-br from-neutral-900 via-neutral-900/95 to-pink-950/20 p-8 shadow-lg shadow-pink-500/5">
-          <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-fuchsia-500/5 pointer-events-none" />
-          <div className="relative space-y-4">
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-[10px] uppercase tracking-widest text-pink-400 font-semibold border border-pink-500/30 px-2 py-0.5 rounded">
-                Featured Enterprise Project
-              </span>
-              <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-neutral-800 border border-neutral-700 text-xs text-neutral-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                Live
-              </span>
-            </div>
-
-            <h2 className="text-2xl md:text-3xl font-bold text-white">
-              GUESS AI Stylist
-            </h2>
-
-            <p className="text-neutral-400 text-sm leading-relaxed max-w-2xl">
-              An AI-powered styling assistant built for GUESS&apos;s enterprise
-              retail platform. Uses LLMs and product catalog embeddings to
-              deliver personalized outfit recommendations, reducing manual
-              curation time and improving conversion at scale.
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              {[
-                { label: "LLMs", cls: "bg-fuchsia-300 border-fuchsia-400" },
-                { label: "RAG", cls: "bg-purple-300 border-purple-400" },
-                { label: "Next.js", cls: "bg-pink-400 border-pink-500" },
-                { label: "Vector Search", cls: "bg-purple-500 border-purple-600" },
-                { label: "Enterprise Retail", cls: "bg-pink-500 border-pink-600" },
-              ].map((chip) => (
-                <span
-                  key={chip.label}
-                  className={`${chip.cls} border text-gray-800 text-xs font-medium px-2 py-1 rounded-lg`}>
-                  {chip.label}
-                </span>
-              ))}
-            </div>
-
-            <Link
-              href="/guess-ai-stylist"
-              className="inline-flex items-center gap-1 text-pink-400 hover:text-pink-300 text-sm font-medium transition-colors">
-              View Case Study →
-            </Link>
-          </div>
-        </div>
-
         {/* Gallery Label */}
         <div className="text-center" id="gallery">
           <h2 className="text-xl font-bold bg-gradient-to-r from-pink-500 via-fuchsia-500 to-pink-200 text-transparent bg-clip-text animate-gradient">
