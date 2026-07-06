@@ -145,13 +145,6 @@ export default function HomePage() {
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto space-y-8">
 
-        {/* Open To Banner */}
-        <div className="flex justify-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-300 text-xs font-medium">
-            <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
-            Open to: Staff AI Engineer + Principal Architect roles
-          </span>
-        </div>
 
         {/* Hero Section */}
         <div className="text-center space-y-6 py-4">
