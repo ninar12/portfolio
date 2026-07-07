@@ -1,4 +1,14 @@
+import type { Metadata } from "next"
 import ProjectCard from "../components/Card"
+import { buildMetadata } from "../lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "Plantry — AI Pantry & Meal Planning",
+  description:
+    "Plantry turns pantry management into a usable product system: track ingredients, sync groceries into inventory, monitor freshness, and generate recipe ideas from what's on hand.",
+  path: "/myplantry",
+  image: "myplantry.webp",
+})
 
 export default function MyPlantry() {
   return (
@@ -7,59 +17,67 @@ export default function MyPlantry() {
       subtitle="An AI pantry and meal-planning product built around real kitchen workflow"
       problem="Most people do not have a reliable system for tracking what is actually in their kitchen. That leads to wasted groceries, duplicate purchases, and the daily friction of figuring out what to make with what is already at home."
       solution="Plantry turns pantry management into a usable product system: track ingredients, sync groceries into inventory, monitor freshness, and generate recipe ideas from what is already on hand."
-      description="Plantry is a consumer product built around a very practical problem: people buy groceries with good intentions, then lose visibility into what they have, what needs to be used soon, and what meals are actually possible without another store run. Most tools in this space focus on recipes first. Plantry focuses on inventory, decision-making, and reducing waste. The product centers on a pantry dashboard that gives users a clearer view of their kitchen as an active system rather than a static list. Grocery items can be brought into inventory, ingredients can be tracked over time, and AI can generate recipes based on what is currently available. That makes the product useful at the exact moment users need it: when they are trying to decide what to cook without starting from scratch. What makes Plantry strong as a product concept is that it connects convenience with behavior change. It is not just about recipe generation. It is about reducing food waste, lowering decision fatigue, and making the kitchen feel more organized and usable day to day."
+      description="Plantry is a Next.js App Router app backed by Supabase Postgres. Inventory gets populated four ways — manual entry, a receipt photo (Gemini vision parses line items and decodes abbreviations like 'CHKN BRST'), a fridge or pantry photo (Gemini identifies what's visible), a handwritten list photo (transcribed), or a recipe imported from a URL or pasted text — there's no barcode scanning or grocery-API integration. Freshness runs on a self-reinforcing three-tier lookup: a pg_trgm fuzzy match against a seeded 433-row USDA FoodKeeper table first, a Gemini estimate when an item isn't found, then that estimate gets cached back into the table so it's a plain rule-based lookup for every user after that. Recipe generation is a single Gemini call, not an agent loop: the prompt bundles the full current pantry, dietary restrictions and cuisine preferences, and the titles of the user's last 10 saved recipes (for variety), plus hardcoded guardrails against inventing dishes, and forces strict JSON output."
       techStack={[
         { type: "framework", name: "Next.js" },
         { type: "library", name: "React" },
-        { type: "skill", name: "Product Design" },
-        { type: "skill", name: "Dashboard UX" },
-        { type: "skill", name: "AI Recipe Generation" },
-        { type: "skill", name: "Inventory Logic" },
+        { type: "other", name: "Supabase Postgres" },
+        { type: "other", name: "pgvector" },
+        { type: "other", name: "pg_trgm" },
+        { type: "API", name: "Google Gemini" },
+        { type: "tool", name: "NextAuth" },
+        { type: "hosting", name: "Vercel" },
       ]}
       year="2025"
       link="https://www.myplantry.app/dashboard"
       status="in progress"
-      diagram={`graph LR
-  A[User adds groceries or pantry items] --> B[Kitchen inventory stays current]
-  B --> C[Dashboard tracks ingredients and freshness]
-  C --> D[AI suggests recipes from what is available]
-  D --> E[Less waste and easier meal planning]`}
+      diagram={`graph TD
+  A[Manual entry, receipt photo, fridge photo, handwritten list, or recipe URL] --> B[Gemini vision and text parsing]
+  B --> C[Supabase Postgres inventory with RLS]
+  C --> D{Item found in FoodKeeper table}
+  D -->|Yes| E[pg_trgm fuzzy match returns shelf life]
+  D -->|No| F[Gemini estimates shelf life]
+  F --> G[Result cached into FoodKeeper table]
+  G --> E
+  E --> H[Freshness ranked pantry]
+  H --> I[Single Gemini call combining pantry, preferences, and recent recipes]
+  I --> J[Strict JSON recipe returned to dashboard]`}
     >
       <div className="space-y-8">
-        <div className="relative overflow-hidden rounded-3xl border border-emerald-400/20 bg-neutral-950/90 p-6 sm:p-8">
+        <div className="relative overflow-hidden rounded-3xl border border-emerald-400/20 bg-neutral-50 dark:bg-neutral-950/90 p-6 sm:p-8">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.16),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(236,72,153,0.12),_transparent_35%)]" />
           <div className="relative">
-            <p className="text-xs uppercase tracking-[0.35em] text-emerald-200/80">
+            <p className="text-xs uppercase tracking-[0.35em] text-emerald-700 dark:text-emerald-200/80">
               Case Study Snapshot
             </p>
             <div className="mt-5 grid gap-4 md:grid-cols-3">
               {[
                 {
-                  label: "Core Use Case",
-                  value: "Pantry + Meals",
-                  detail: "Built around inventory visibility first, then recipe generation from what is already available.",
+                  label: "Ingestion",
+                  value: "4 Capture Paths",
+                  detail: "Manual entry, receipt photo, fridge/pantry photo, and handwritten list, all parsed by Gemini vision, plus recipe import from URL or pasted text.",
                 },
                 {
-                  label: "User Benefit",
-                  value: "Less Waste",
-                  detail: "Helps reduce duplicate buying, forgotten ingredients, and day-to-day decision fatigue.",
+                  label: "Freshness Engine",
+                  value: "3-Tier Lookup",
+                  detail: "pg_trgm fuzzy match against a seeded 433-row USDA FoodKeeper table first. Unmatched items get a Gemini estimate that's cached back for next time.",
                 },
                 {
-                  label: "Product Angle",
-                  value: "Household System",
-                  detail: "Turns the kitchen into an organized workflow instead of a scattered set of lists.",
+                  label: "Recipe Generation",
+                  value: "Single Gemini Call",
+                  detail: "One guardrailed prompt bundles pantry, preferences, and recent recipe titles, then forces strict JSON output. No agent loop.",
                 },
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-                  <p className="text-xs uppercase tracking-widest text-neutral-400">
+                  className="rounded-2xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-white/5 p-5 backdrop-blur-sm">
+                  <p className="text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
                     {item.label}
                   </p>
-                  <p className="mt-3 text-2xl font-semibold text-emerald-100">
+                  <p className="mt-3 text-2xl font-semibold text-emerald-700 dark:text-emerald-100">
                     {item.value}
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-300">
+                  <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
                     {item.detail}
                   </p>
                 </div>
@@ -68,46 +86,40 @@ export default function MyPlantry() {
           </div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="rounded-3xl border border-emerald-400/15 bg-neutral-900/60 p-6 sm:p-8">
-            <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">
-              Why It Works
+        <div className="grid gap-6 lg:grid-cols-2">
+          <div className="rounded-3xl border border-emerald-400/15 bg-neutral-50 dark:bg-neutral-900/60 p-6 sm:p-8">
+            <p className="text-xs uppercase tracking-[0.3em] text-neutral-500 dark:text-neutral-400">
+              Data &amp; API Layer
             </p>
-            <div className="mt-5 space-y-5 text-sm leading-relaxed text-neutral-300">
-              <p>
-                Most products in this category start with recipes, but the real
-                breakdown happens earlier. People lose track of ingredients,
-                forget what needs to be used, and end up making decisions
-                without a clear view of their kitchen.
-              </p>
-              <p>
-                Plantry addresses that by treating pantry visibility as the
-                foundation. Once the inventory is accurate and current, AI can
-                actually become useful because it is generating ideas from what
-                the user really has, not from a generic list of preferences.
-              </p>
-              <p>
-                That makes the product feel practical instead of novelty-based.
-                It supports better habits, lowers friction, and gives people a
-                clearer system for everyday cooking rather than just another
-                recipe destination.
-              </p>
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-pink-400/15 bg-neutral-950/80 p-6 sm:p-8">
-            <p className="text-xs uppercase tracking-[0.3em] text-pink-200/80">
-              Product System
-            </p>
-            <ul className="mt-5 space-y-3 text-sm text-neutral-300">
+            <ul className="mt-5 space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
               {[
-                "Pantry inventory tracking as the core dashboard behavior.",
-                "Grocery sync that turns shopping activity into kitchen state.",
-                "Freshness and expiry awareness to reduce waste.",
-                "AI recipe generation grounded in available ingredients.",
+                "Supabase Postgres with pg_trgm and pgvector enabled.",
+                "Real API layer: Next.js App Router route handlers under src/app/api/*, not client-side logic.",
+                "Row-level security enabled on tables; server-side session checks via getServerSession.",
+                "Service-role key used inside API routes for privileged writes that need to bypass RLS.",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-pink-300" />
+                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500 dark:bg-emerald-300" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-3xl border border-pink-400/15 bg-neutral-50 dark:bg-neutral-950/80 p-6 sm:p-8">
+            <p className="text-xs uppercase tracking-[0.3em] text-pink-700 dark:text-pink-200/80">
+              Ingestion Pipeline
+            </p>
+            <ul className="mt-5 space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
+              {[
+                "Receipt photo scan: Gemini parses line items and decodes abbreviations like \"CHKN BRST\".",
+                "Fridge/pantry photo scan: Gemini identifies items visible in the shot.",
+                "Handwritten list photo: transcribed directly into inventory.",
+                "Recipe import from a pasted URL or raw text, plus plain manual entry.",
+                "No barcode scanning or grocery-delivery API integration.",
+              ].map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-pink-500 dark:bg-pink-300" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -116,38 +128,31 @@ export default function MyPlantry() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-neutral-700 bg-neutral-900/50 p-6">
-            <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">
-              User Experience
+          <div className="rounded-3xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900/50 p-6">
+            <p className="text-xs uppercase tracking-[0.3em] text-neutral-500 dark:text-neutral-400">
+              Freshness System
             </p>
-            <ul className="mt-5 space-y-3 text-sm text-neutral-300">
-              {[
-                "Dashboard-centered design instead of a recipe-first experience.",
-                "Built for daily decision-making at the exact moment users need help.",
-                "Reduces duplicate purchases and forgotten ingredients.",
-                "Makes the kitchen feel more manageable and organized over time.",
-              ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-300" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <ol className="mt-5 space-y-3 text-sm text-neutral-700 dark:text-neutral-300 list-decimal list-inside">
+              <li>pg_trgm fuzzy match against a seeded 433-row USDA FoodKeeper table.</li>
+              <li>If no match, a Gemini call estimates shelf life for that item.</li>
+              <li>The Gemini result is cached back into the FoodKeeper table, so it's a plain rule-based lookup for every user after that. Self-reinforcing, not a live AI call on every check.</li>
+            </ol>
           </div>
 
-          <div className="rounded-3xl border border-neutral-700 bg-neutral-900/50 p-6">
-            <p className="text-xs uppercase tracking-[0.3em] text-neutral-400">
-              Product Decisions
+          <div className="rounded-3xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900/50 p-6">
+            <p className="text-xs uppercase tracking-[0.3em] text-neutral-500 dark:text-neutral-400">
+              Recipe Generation Prompt
             </p>
-            <ul className="mt-5 space-y-3 text-sm text-neutral-300">
+            <ul className="mt-5 space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
               {[
-                "Starts from household workflow, not just content discovery.",
-                "Uses AI where it adds utility, not as a gimmick.",
-                "Connects convenience with long-term behavior change.",
-                "Frames food waste and planning friction as solvable system problems.",
+                "Full current pantry: name, category, expiration date.",
+                "Dietary restrictions and cuisine preferences from user_preferences.",
+                "Titles of the user's last 10 saved recipes, for variety, not repeats.",
+                "Optional free-text request, plus hardcoded guardrails against invented combos (e.g. vinegar pasta) that force a recognizable dish and prioritize soonest-expiring ingredients.",
+                "Single Gemini call (gemini-3.1-pro-preview via @google/genai), not agentic. Output is forced strict JSON.",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
-                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
+                  <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500 dark:bg-cyan-300" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -155,34 +160,15 @@ export default function MyPlantry() {
           </div>
         </div>
 
-        <div className="rounded-3xl border border-emerald-400/15 bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 p-6 sm:p-8">
-          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-emerald-200/80">
-                Interface Direction
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-neutral-300">
-                The interface is positioned more like a premium consumer product
-                than a simple utility app. The goal is to make kitchen
-                management feel calm, useful, and repeatable so the product can
-                fit naturally into real household routines.
-              </p>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                "Clean dashboard UX built around repeat use",
-                "Household-oriented workflow rather than one-off novelty",
-                "Inventory visibility before recipe suggestion",
-                "Practical daily utility instead of gimmicky AI",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-relaxed text-neutral-300">
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="rounded-3xl border border-emerald-400/15 bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950 p-6 sm:p-8">
+          <p className="text-xs uppercase tracking-[0.3em] text-emerald-700 dark:text-emerald-200/80">
+            Auth &amp; Hosting
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+            NextAuth handles both Google OAuth and email/password credentials
+            through the same session, checked server-side in every API route.
+            The app runs on the Next.js App Router, deployed on Vercel.
+          </p>
         </div>
       </div>
     </ProjectCard>

@@ -44,15 +44,15 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="max-w-md mx-auto mt-8 p-6 bg-neutral-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-pink-500/20">
-      <h2 className="text-2xl font-bold mb-6 text-center text-pink-200">
+    <div className="max-w-md mx-auto mt-8 p-6 bg-neutral-100 dark:bg-neutral-900/50 backdrop-blur-sm rounded-lg shadow-lg border border-pink-500/20">
+      <h2 className="text-2xl font-bold mb-6 text-center text-pink-700 dark:text-pink-200">
         Get in Touch
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label
             htmlFor="name"
-            className="block text-sm font-medium text-pink-300">
+            className="block text-sm font-medium text-pink-600 dark:text-pink-300">
             Name
           </label>
           <input
@@ -62,13 +62,13 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="mt-1 block w-full px-3 py-2 bg-neutral-800/50 border border-pink-500/30 rounded-md text-white placeholder-pink-300/50 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+            className="mt-1 block w-full px-3 py-2 bg-white dark:bg-neutral-800/50 border border-pink-500/30 rounded-md text-neutral-900 dark:text-white placeholder-pink-400/60 dark:placeholder-pink-300/50 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
           />
         </div>
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-pink-300">
+            className="block text-sm font-medium text-pink-600 dark:text-pink-300">
             Email
           </label>
           <input
@@ -78,13 +78,13 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="mt-1 block w-full px-3 py-2 bg-neutral-800/50 border border-pink-500/30 rounded-md text-white placeholder-pink-300/50 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+            className="mt-1 block w-full px-3 py-2 bg-white dark:bg-neutral-800/50 border border-pink-500/30 rounded-md text-neutral-900 dark:text-white placeholder-pink-400/60 dark:placeholder-pink-300/50 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
           />
         </div>
         <div>
           <label
             htmlFor="message"
-            className="block text-sm font-medium text-pink-300">
+            className="block text-sm font-medium text-pink-600 dark:text-pink-300">
             Message
           </label>
           <textarea
@@ -94,17 +94,17 @@ const ContactForm = () => {
             onChange={handleChange}
             required
             rows={4}
-            className="mt-1 block w-full px-3 py-2 bg-neutral-800/50 border border-pink-500/30 rounded-md text-white placeholder-pink-300/50 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+            className="mt-1 block w-full px-3 py-2 bg-white dark:bg-neutral-800/50 border border-pink-500/30 rounded-md text-neutral-900 dark:text-white placeholder-pink-400/60 dark:placeholder-pink-300/50 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
           />
         </div>
         <button
           type="submit"
           disabled={status === "sending"}
-          className="w-full bg-pink-500 text-white py-2 px-4 rounded-md hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-neutral-900 disabled:opacity-50 transition-colors">
+          className="w-full bg-pink-500 text-white py-2 px-4 rounded-md hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-neutral-900 disabled:opacity-50 transition-colors">
           {status === "sending" ? "Sending..." : "Send Message"}
         </button>
         {status === "success" && (
-          <p className="text-pink-300 text-center mt-2">
+          <p className="text-pink-600 dark:text-pink-300 text-center mt-2">
             Message sent successfully!
           </p>
         )}

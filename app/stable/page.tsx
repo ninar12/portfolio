@@ -1,4 +1,14 @@
+import type { Metadata } from "next"
 import ProjectCard from "../components/Card"
+import { buildMetadata } from "../lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "Stable Diffusion Prompt Recipe Generator",
+  description:
+    "A Next.js prompt recipe app with a structured formula for image generation and an auto-generator powered by a HuggingFace model fine-tuned on Midjourney prompts.",
+  path: "/stable",
+  image: "stablediffusion.webp",
+})
 
 export default function Stable() {
   return (
@@ -20,7 +30,7 @@ export default function Stable() {
         { type: "skill", name: "fullstack" },
       ]}
       link="https://www.patternbreak.ai/"
-      image="stablediffusion.png"
+      image="stablediffusion.webp"
       skills="development, collaboration, R&D, idea generation, design, and deployment"
       githubLink=""
       diagram={`graph LR

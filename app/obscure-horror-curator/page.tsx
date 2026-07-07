@@ -1,4 +1,14 @@
+import type { Metadata } from "next"
 import ProjectCard from "../components/Card"
+import { buildMetadata } from "../lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "The Obscure Horror Curator — Custom GPT",
+  description:
+    "A custom GPT trained on a curated knowledge base of obscure horror films, with a vibe-based prompt system and guardrails for sensitive content, deployable in ChatGPT.",
+  path: "/obscure-horror-curator",
+  image: "horror-gpt.webp",
+})
 
 export default function ObscureHorrorCurator() {
   return (
@@ -16,7 +26,7 @@ export default function ObscureHorrorCurator() {
       ]}
       year="2024"
       skills="genre research, vibe-based recommendation engines, guardrail design for sensitive content, and tooling to keep the horror canon fresh"
-      image="horror-gpt.jpeg"
+      image="horror-gpt.webp"
       githubLink=""
       link="https://chatgpt.com/g/g-68e9a96954f88191b37d29425a037ad7-the-obscure-horror-curator"
       diagram={`graph LR

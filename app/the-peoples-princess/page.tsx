@@ -1,4 +1,14 @@
+import type { Metadata } from "next"
 import ProjectCard from "../components/Card"
+import { buildMetadata } from "../lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "The People's Princess — Mutual Aid Bulletin",
+  description:
+    "A hyper-local mutual aid bulletin built in Next.js with a content submission funnel, moderation rules, and shareable postcard templates for community organizers.",
+  path: "/the-peoples-princess",
+  image: "peoples-princess.webp",
+})
 
 export default function ThePeoplesPrincess() {
   return (
@@ -17,7 +27,7 @@ export default function ThePeoplesPrincess() {
       ]}
       year="2024"
       skills="coordinating disaster relief asks, connecting reproductive care support, mutual aid storytelling, lightweight CMS architecture, and mobile-first posting flows"
-      image="peoples-princess.png"
+      image="peoples-princess.webp"
       githubLink=""
       diagram={`graph LR
   A[Wildfires expose mutual aid gap] --> B[Define content rules + funnel]

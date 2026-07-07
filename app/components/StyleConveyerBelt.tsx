@@ -39,7 +39,7 @@ export function StyleConveyorBelt() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: index * 0.05 }}
-          className="bg-neutral-800/50 backdrop-blur-sm rounded-lg p-2 flex items-center justify-center text-[9px] text-neutral-300 hover:text-pink-400 transition-colors border border-pink-500/10 hover:border-pink-500/30">
+          className="bg-neutral-100 dark:bg-neutral-800/50 backdrop-blur-sm rounded-lg p-2 flex items-center justify-center text-[9px] text-neutral-700 dark:text-neutral-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors border border-pink-500/10 hover:border-pink-500/30">
           {tool.name}
         </motion.div>
       ))}

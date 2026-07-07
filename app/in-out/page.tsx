@@ -1,4 +1,14 @@
+import type { Metadata } from "next"
 import ProjectCard from "../components/Card"
+import { buildMetadata } from "../lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "IN & OUT Generator",
+  description:
+    "A React app using the React-95 component library to render a Windows 95-style list builder, letting users create and share their own annual in/out lists.",
+  path: "/in-out",
+  image: "inout.webp",
+})
 
 export default function InOut() {
   return (
@@ -16,7 +26,7 @@ export default function InOut() {
       ]}
       skills="design, development, and deployment"
       year="2024"
-      image="inout.png"
+      image="inout.webp"
       githubLink="https://github.com/ninar12/in-and-out"
       diagram={`graph LR
   A[Gen Z makes annual in-out lists] --> B[Discover React-95 component library]

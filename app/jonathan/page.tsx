@@ -1,4 +1,14 @@
+import type { Metadata } from "next"
 import ProjectCard from "../components/Card"
+import { buildMetadata } from "../lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "Personal Website for Jonathan Fernandez",
+  description:
+    "A Squarespace site with custom CSS built around writer, producer, and director Jonathan Fernandez's work reel, teaching history, and contact info.",
+  path: "/jonathan",
+  image: "jonathan.webp",
+})
 
 export default function Jonathan() {
   return (
@@ -15,7 +25,7 @@ export default function Jonathan() {
       ]}
       year="2024"
       skills="squarespace, website design, user experience, and content creation"
-      image="jonathan.png"
+      image="jonathan.webp"
       githubLink=""
       diagram={`graph LR
   A[Writer-director needs brand site] --> B[Scope content + navigation]

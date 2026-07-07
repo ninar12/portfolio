@@ -28,37 +28,39 @@ export default function DemoEmbed({
   url,
   fallbackImage,
   fallbackVideo,
+  alt,
 }: {
   url?: string
   fallbackImage?: string
   fallbackVideo?: string
+  alt?: string
 }) {
   const [failed, setFailed] = useState(() => isBlocked(url))
 
   if (!url && !fallbackImage && !fallbackVideo) return null
 
   const browserChrome = url ? (
-    <div className="bg-neutral-800 px-4 py-2.5 flex items-center gap-3 border-b border-neutral-700 shrink-0">
+    <div className="bg-neutral-200 dark:bg-neutral-800 px-4 py-2.5 flex items-center gap-3 border-b border-neutral-300 dark:border-neutral-700 shrink-0">
       <div className="flex gap-1.5 shrink-0">
         <div className="w-3 h-3 rounded-full bg-red-500/80" />
         <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
         <div className="w-3 h-3 rounded-full bg-green-500/80" />
       </div>
-      <div className="flex-1 bg-neutral-900 rounded-md px-3 py-1 text-xs text-neutral-400 truncate min-w-0">
+      <div className="flex-1 bg-white dark:bg-neutral-900 rounded-md px-3 py-1 text-xs text-neutral-600 dark:text-neutral-400 truncate min-w-0">
         {(() => { try { return new URL(url).hostname } catch { return url } })()}
       </div>
       <a
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="shrink-0 text-xs text-neutral-400 hover:text-pink-400 transition-colors">
+        className="shrink-0 text-xs text-neutral-600 dark:text-neutral-400 hover:text-pink-500 dark:hover:text-pink-400 transition-colors">
         ↗ open
       </a>
     </div>
   ) : null
 
   const mediaFallback = fallbackVideo ? (
-    <div className="bg-neutral-950 p-6 flex flex-col gap-4">
+    <div className="bg-neutral-100 dark:bg-neutral-950 p-6 flex flex-col gap-4">
       <video
         src={fallbackVideo}
         className="w-full rounded-xl"
@@ -80,8 +82,13 @@ export default function DemoEmbed({
       )}
     </div>
   ) : fallbackImage ? (
-    <div className="bg-neutral-950 p-6 flex flex-col gap-4">
-      <PixelatedImage src={fallbackImage} className="w-full rounded-xl" />
+    <div className="bg-neutral-100 dark:bg-neutral-950 p-6 flex flex-col gap-4">
+      <PixelatedImage
+        src={fallbackImage}
+        alt={alt ?? fallbackImage}
+        className="w-full rounded-xl"
+        priority
+      />
       {url && (
         <div className="flex justify-center">
           <a
@@ -95,8 +102,8 @@ export default function DemoEmbed({
       )}
     </div>
   ) : (
-    <div className="bg-neutral-950 h-48 flex flex-col items-center justify-center gap-4">
-      <p className="text-neutral-500 text-sm">This site can&apos;t be embedded.</p>
+    <div className="bg-neutral-100 dark:bg-neutral-950 h-48 flex flex-col items-center justify-center gap-4">
+      <p className="text-neutral-600 dark:text-neutral-500 text-sm">This site can&apos;t be embedded.</p>
       <a
         href={url}
         target="_blank"
@@ -108,12 +115,12 @@ export default function DemoEmbed({
   )
 
   return (
-    <div className="rounded-2xl overflow-hidden border border-neutral-700 shadow-2xl shadow-black/50 flex flex-col h-full">
+    <div className="rounded-2xl overflow-hidden border border-neutral-300 dark:border-neutral-700 shadow-2xl shadow-black/10 dark:shadow-black/50 flex flex-col h-full">
       {browserChrome}
       {!url || failed ? (
         mediaFallback
       ) : (
-        <div className="relative bg-neutral-950 flex-1 min-h-[400px] overflow-hidden">
+        <div className="relative bg-neutral-100 dark:bg-neutral-950 flex-1 min-h-[400px] overflow-hidden">
           <iframe
             src={url}
             style={{ zoom: 0.5 }}

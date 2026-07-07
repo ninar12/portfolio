@@ -1,4 +1,14 @@
+import type { Metadata } from "next"
 import ProjectCard from "../components/Card"
+import { buildMetadata } from "../lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "Unreleased Lana Del Rey Pomodoro Timer",
+  description:
+    "A React pomodoro timer with original hand-drawn illustrations and Lana Del Rey audio that plays on each timer interval, built as a calming aesthetic study space.",
+  path: "/pomodoro",
+  image: "pomodoro.webp",
+})
 
 export default function Pomodoro() {
   return (
@@ -15,7 +25,7 @@ export default function Pomodoro() {
         { type: "other", name: "Illustration By Me" },
       ]}
       year="2024"
-      image="pomodoro.png"
+      image="pomodoro.webp"
       skills="development, design, and deployment"
       githubLink="https://github.com/ninar12/aestheticpomodoro"
       diagram={`graph LR

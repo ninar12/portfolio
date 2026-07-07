@@ -1,4 +1,14 @@
+import type { Metadata } from "next"
 import ProjectCard from "../components/Card"
+import { buildMetadata } from "../lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "DBT Chatbot",
+  description:
+    "A Cozebot chatbot ingesting a free DBT workbook PDF and affirmation resources as a knowledge base, providing conversational DBT skill recall and daily practice prompts.",
+  path: "/dbt-chatbot",
+  image: "cozebot.webp",
+})
 
 export default function Dbt() {
   return (
@@ -15,7 +25,7 @@ export default function Dbt() {
         { type: "skill", name: "Chatbot" },
       ]}
       year="2024"
-      image="cozebot.png"
+      image="cozebot.webp"
       skills="cozebot, hackathon, DBT, mindfulness & tech, chatbot development"
       githubLink=""
       diagram={`graph LR

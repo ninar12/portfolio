@@ -1,5 +1,13 @@
-import React from "react"
+import type { Metadata } from "next"
 import Link from "next/link"
+import { buildMetadata } from "../lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "Services — AI Systems, Chatbots & Custom Web Development",
+  description:
+    "Custom brand websites, AI assistants and chatbots, internal tooling and automation, and retail AI product discovery — designed and built by Nina Rhone.",
+  path: "/services",
+})
 
 const services = [
   {
@@ -43,13 +51,13 @@ export default function ServicesPage() {
 
         {/* Header */}
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white leading-tight">
             Custom systems for{" "}
             <span className="bg-gradient-to-r from-pink-500 via-fuchsia-400 to-pink-200 text-transparent bg-clip-text">
               growing brands.
             </span>
           </h1>
-          <p className="text-neutral-400 text-lg max-w-2xl leading-relaxed">
+          <p className="text-neutral-600 dark:text-neutral-400 text-lg max-w-2xl leading-relaxed">
             I design and build websites, AI products, and internal tools for
             businesses that want sharper execution without hiring a full
             product or engineering team.
@@ -61,20 +69,20 @@ export default function ServicesPage() {
           {services.map((s) => (
             <div
               key={s.title}
-              className="bg-neutral-900/50 p-8 rounded-2xl border border-pink-500/20 hover:border-pink-500/40 transition-all">
+              className="bg-neutral-100 dark:bg-neutral-900/50 p-8 rounded-2xl border border-pink-500/20 hover:border-pink-500/40 transition-all">
               <div className="flex flex-col sm:flex-row sm:items-start gap-4">
                 <div className="flex-1 space-y-3">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-semibold text-pink-500 border border-pink-500/30 rounded px-2 py-0.5 tracking-widest">
+                    <span className="text-xs font-semibold text-pink-600 dark:text-pink-500 border border-pink-500/30 rounded px-2 py-0.5 tracking-widest">
                       {s.tag}
                     </span>
                   </div>
-                  <h2 className="text-2xl font-bold text-white">{s.title}</h2>
-                  <p className="text-neutral-400 leading-relaxed">{s.description}</p>
+                  <h2 className="text-2xl font-bold text-neutral-900 dark:text-white">{s.title}</h2>
+                  <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">{s.description}</p>
                   <ul className="space-y-1.5 pt-1">
                     {s.details.map((d) => (
-                      <li key={d} className="flex items-start gap-2 text-sm text-neutral-300">
-                        <span className="text-pink-400 mt-0.5">_</span>
+                      <li key={d} className="flex items-start gap-2 text-sm text-neutral-700 dark:text-neutral-300">
+                        <span className="text-pink-500 dark:text-pink-400 mt-0.5">_</span>
                         {d}
                       </li>
                     ))}
@@ -86,8 +94,8 @@ export default function ServicesPage() {
         </div>
 
         {/* How it works */}
-        <div className="bg-neutral-900/30 p-8 rounded-2xl border border-pink-500/10 space-y-6">
-          <h3 className="text-pink-300 font-semibold text-sm tracking-widest">HOW IT WORKS</h3>
+        <div className="bg-neutral-100 dark:bg-neutral-900/30 p-8 rounded-2xl border border-pink-500/10 space-y-6">
+          <h3 className="text-pink-600 dark:text-pink-300 font-semibold text-sm tracking-widest">HOW IT WORKS</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { step: "01", title: "Free 30-min call", desc: "Tell me what you're trying to solve. I'll tell you what I'd build and whether it's worth it." },
@@ -96,19 +104,19 @@ export default function ServicesPage() {
             ].map((item) => (
               <div key={item.step} className="space-y-2">
                 <span className="text-pink-500 font-bold text-2xl">{item.step}</span>
-                <h4 className="text-white font-semibold">{item.title}</h4>
-                <p className="text-neutral-400 text-sm leading-relaxed">{item.desc}</p>
+                <h4 className="text-neutral-900 dark:text-white font-semibold">{item.title}</h4>
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* CTA */}
-        <div className="text-center space-y-6 bg-neutral-900/50 backdrop-blur-sm p-10 rounded-2xl border border-pink-500/20">
-          <h2 className="text-2xl font-bold text-pink-200">
+        <div className="text-center space-y-6 bg-neutral-100 dark:bg-neutral-900/50 backdrop-blur-sm p-10 rounded-2xl border border-pink-500/20">
+          <h2 className="text-2xl font-bold text-pink-700 dark:text-pink-200">
             Need clarity before you invest?
           </h2>
-          <p className="text-neutral-300 max-w-xl mx-auto">
+          <p className="text-neutral-700 dark:text-neutral-300 max-w-xl mx-auto">
             Tell me what you are trying to build, fix, or automate. I will tell
             you what I would recommend, what I would not recommend, and what is
             worth doing first.

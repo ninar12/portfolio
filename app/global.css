@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 ::selection {
   background-color: #ff00fb;
   color: white;
@@ -8,7 +10,8 @@
 :root {
   --sh-class: #1a365b;
   --sh-identifier: #4d4d4d;
-  --bg-color: black;
+  --bg-color: white;
+  --fg-color: black;
   --sh-sign: #8996a3;
   --sh-string: #007f7a;
   --sh-keyword: #e02518;
@@ -18,10 +21,17 @@
   --sh-entity: #e25a1c;
 }
 
+.dark {
+  --bg-color: black;
+  --fg-color: white;
+}
+
 html {
   min-width: 360px;
   background-color: var(--bg-color);
+  color: var(--fg-color);
   line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .prose .anchor {

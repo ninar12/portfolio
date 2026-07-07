@@ -1,4 +1,14 @@
+import type { Metadata } from "next"
 import ProjectCard from "../components/Card"
+import { buildMetadata } from "../lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "Personal Website for Hilary MacGregor",
+  description:
+    "A personal brand identity developed in Figma and translated into a Wix site with custom CSS for therapist Hilary MacGregor, centered on narrative and compassion.",
+  path: "/hilary",
+  image: "hilary.webp",
+})
 
 export default function Hilary() {
   return (
@@ -16,7 +26,7 @@ export default function Hilary() {
       ]}
       year="2024"
       skills="web development, website design, user experience, and content creation"
-      image="hilary.png"
+      image="hilary.webp"
       githubLink=""
       diagram={`graph LR
   A[Therapist needs brand + web presence] --> B[Develop brand identity in Figma]

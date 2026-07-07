@@ -1,4 +1,14 @@
+import type { Metadata } from "next"
 import ProjectCard from "../components/Card"
+import { buildMetadata } from "../lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: "Black Friday AI Deal Hunter",
+  description:
+    "A Cloud Run API that scrapes retailer promotions, normalizes and ranks deals through Google AI Studio, and matches items to comparable products so shoppers see the best price instantly.",
+  path: "/black-friday-ai-deal-hunter",
+  image: "blackfriday.webp",
+})
 
 export default function BlackFridayAIDealHunter() {
   return (
@@ -17,7 +27,7 @@ export default function BlackFridayAIDealHunter() {
       ]}
       year="2025"
       skills="retail data ingestion, promo normalization, LLM prompt engineering for deal chatter, and lightweight workflow automation"
-      image="blackfriday.jpeg"
+      image="blackfriday.webp"
       githubLink=""
       diagram={`graph LR
   A[Retailer Pages] --> B[Scraper]
